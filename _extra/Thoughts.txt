@@ -1,0 +1,2 @@
+1 custom exception class instead of multiple (UserException, OrderException)
+Multiple facades - correct?

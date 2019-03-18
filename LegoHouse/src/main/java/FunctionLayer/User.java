@@ -1,12 +1,18 @@
 package FunctionLayer;
 
+import java.util.List;
+import java.util.Objects;
+
 /**
  * The purpose of User is to...
+ *
  * @author kasper
  */
-public class User {
+public class User
+{
 
-    public User( String email, String password, String role ) {
+    public User(String email, String password, String role)
+    {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -16,37 +22,107 @@ public class User {
     private String email;
     private String password; // Should be hashed and secured
     private String role;
+    private List<Order> orders;
 
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
-    public void setEmail( String email ) {
+    public void setEmail(String email)
+    {
         this.email = email;
     }
 
-    public String getPassword() {
+    public String getPassword()
+    {
         return password;
     }
 
-    public void setPassword( String password ) {
+    public void setPassword(String password)
+    {
         this.password = password;
     }
 
-    public String getRole() {
+    public String getRole()
+    {
         return role;
     }
 
-    public void setRole( String role ) {
+    public void setRole(String role)
+    {
         this.role = role;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId( int id ) {
+    public void setId(int id)
+    {
         this.id = id;
+    }
+
+    public List<Order> getOrders()
+    {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders)
+    {
+        this.orders = orders;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 7;
+        hash = 47 * hash + this.id;
+        hash = 47 * hash + Objects.hashCode(this.email);
+        hash = 47 * hash + Objects.hashCode(this.password);
+        hash = 47 * hash + Objects.hashCode(this.role);
+        hash = 47 * hash + Objects.hashCode(this.orders);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
+        {
+            return false;
+        }
+        if (getClass() != obj.getClass())
+        {
+            return false;
+        }
+        final User other = (User) obj;
+        if (this.id != other.id)
+        {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email))
+        {
+            return false;
+        }
+        if (!Objects.equals(this.password, other.password))
+        {
+            return false;
+        }
+        if (!Objects.equals(this.role, other.role))
+        {
+            return false;
+        }
+        if (!Objects.equals(this.orders, other.orders))
+        {
+            return false;
+        }
+        return true;
     }
 
 }
