@@ -1,2 +1,14 @@
 1 custom exception class instead of multiple (UserException, OrderException)
 Multiple facades - correct?
+Orders arraylist on user? hvordan binder vi invoices til user? se CMD_checkout
+fix css
+
+Kunde:
+Ordre - længde, bredde, højde. [x]
+Kunde skal kunne se tidligere ordre
+Er ordre afsendt eller ej? [x]
+Ordre detaljer skal vise stykliste
+
+
+
+https://github.com/mathiasbk1/LegoHus/blob/master/src/main/java/FunctionLayer/BrickCalculator.java
