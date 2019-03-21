@@ -1,6 +1,6 @@
 # LegoHouse
 
-## Installation and use
+### Installation and use
 1) Set up your database using the included SQL script. (Found in \_extra)
 2) Change the DBConnector to your setup. (Found in the data layer)
 3) Clean and build. **The tests should fail**, considering you haven't set up a test database for my specific project. Either delete them or comment them out.
