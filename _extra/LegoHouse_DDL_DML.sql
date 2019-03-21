@@ -1,4 +1,4 @@
-DROP DATABASE `legohouse`;
+DROP DATABASE IF EXISTS `legohouse`;
 
 CREATE DATABASE  IF NOT EXISTS `legohouse`;
 
@@ -6,9 +6,9 @@ USE `legohouse`;
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(90) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `role` varchar(20) NOT NULL DEFAULT 'customer',
+  `email` varchar(35) NOT NULL,
+  `password` varchar(18) NOT NULL,
+  `role` varchar(10) NOT NULL DEFAULT 'customer',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -28,11 +28,13 @@ CREATE TABLE `legohouse`.`orders` (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
+ALTER table USER AUTO_INCREMENT = 1;
 
 LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES 
-(1,'jens@somewhere.com','jensen','customer'),
-(2,'ken@somewhere.com','kensen','customer'),
-(3,'robin@somewhere.com','batman','employee');
+(default,'jens@somewhere.com','jensen','customer'),
+(default,'ken@somewhere.com','kensen','customer'),
+(default,'robin@somewhere.com','batman','employee'),
+(default,'admin@admin.dk', '1234', 'employee');
 UNLOCK TABLES;
 

@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +21,7 @@ public class OrderMapper
     {
         try
         {
-            Connection con = Connector.connection();
+            Connection con = DBConnector.connection();
             String SQL = "INSERT INTO `legohouse`.`orders` "
                     + "(`length`, "
                     + "`width`, "
@@ -55,7 +56,7 @@ public class OrderMapper
         int result;
         try
         {
-            Connection con = Connector.connection();
+            Connection con = DBConnector.connection();
             String SQL = "UPDATE `legohouse`.`orders` "
                     + "SET "
                     + "`status_sent` = ? "
@@ -64,13 +65,79 @@ public class OrderMapper
             stmt.setBoolean(1, newStatus);
             stmt.setInt(2, orderID);
             result = stmt.executeUpdate();
-
         }
         catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Error updating order status: \n" + ex.getMessage());
         }
-
         return result > 0;
+    }
+
+    /**
+     * Returns all orders from a specific user
+     *
+     * @param userID users UID
+     * @return list of orders
+     * @throws OrderException throws exception
+     */
+    public static ArrayList<Order> getAllOrdersByUserID(int userID) throws OrderException
+    {
+        ArrayList<Order> allUserOrders = new ArrayList<>();
+        try
+        {
+            Connection con = DBConnector.connection();
+            String SQL = "SELECT * FROM legohouse.orders WHERE orders.user_id = ?;";
+            PreparedStatement stmt = con.prepareStatement(SQL);
+            stmt.setInt(1, userID);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next())
+            {
+                int orderID = rs.getInt("order_id");
+                int length = rs.getInt("length");
+                int width = rs.getInt("width");
+                int height = rs.getInt("height");
+                boolean status_sent = rs.getBoolean("status_sent");
+                Order o = new Order(length, width, height, userID);
+                o.setOrderID(orderID);
+                o.setStatus_sent(status_sent);
+                allUserOrders.add(o);
+            }
+        }
+        catch (SQLException | ClassNotFoundException ex)
+        {
+            throw new OrderException("Error retrieving USER orders from database: \n" + ex.getMessage());
+        }
+        return allUserOrders;
+    }
+
+    public static ArrayList<Order> getAllOrders() throws OrderException
+    {
+        ArrayList<Order> allOrders = new ArrayList<>();
+        try
+        {
+            Connection con = DBConnector.connection();
+            String SQL = "SELECT * FROM legohouse.orders;";
+            PreparedStatement stmt = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next())
+            {
+                int orderID = rs.getInt("order_id");
+                int length = rs.getInt("length");
+                int width = rs.getInt("width");
+                int height = rs.getInt("height");
+                boolean status_sent = rs.getBoolean("status_sent");
+                int userID = rs.getInt("user_id");
+                Order o = new Order(length, width, height, userID);
+                o.setOrderID(orderID);
+                o.setStatus_sent(status_sent);
+                allOrders.add(o);
+            }
+        }
+        catch (SQLException | ClassNotFoundException ex)
+        {
+            throw new OrderException("Unable to retrieve all orders from database: \n" + ex.getMessage());
+        }
+        return allOrders;
     }
 }

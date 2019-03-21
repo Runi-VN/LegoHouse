@@ -3,12 +3,11 @@ package FunctionLayer;
 import DataLayer.UserMapper;
 
 /**
- * The purpose of UserFacade is to...
- * @author kasper
+ * 
+ * @author runi
  */
 public class UserFacade {
 
-    /*User*/
     
     /**
      * Log in user
@@ -17,7 +16,7 @@ public class UserFacade {
      * @return
      * @throws UserException 
      */
-    public static User login( String email, String password ) throws UserException {
+    public  User login( String email, String password ) throws UserException {
         return UserMapper.login( email, password );
     } 
 
@@ -28,7 +27,7 @@ public class UserFacade {
      * @return
      * @throws UserException 
      */
-    public static User createUser( String email, String password ) throws UserException {
+    public  User createUser( String email, String password ) throws UserException {
         User user = new User(email, password, "customer");
         UserMapper.createUser( user );
         return user;

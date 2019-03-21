@@ -14,9 +14,9 @@ public class Order
     private boolean status_sent;
     private int userID;
 
-    public Order()
-    {
-    }
+//    public Order()
+//    {
+//    }
 
     public Order(int length, int width, int height, int userID)
     {

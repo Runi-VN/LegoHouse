@@ -13,7 +13,7 @@ public class UnknownCommand extends Command {
 
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws UserException {
-        String msg = "Unknown command. Contact IT";
+        String msg = "Unknown command. <a href=\".\">Return to frontpage</a>.";
         throw new UserException( msg );
     }
 

@@ -1,5 +1,7 @@
+
+
+
 1 custom exception class instead of multiple (UserException, OrderException)
-Multiple facades - correct?
 Orders arraylist on user? hvordan binder vi invoices til user? se CMD_checkout
 fix css
 
@@ -9,6 +11,16 @@ Kunde skal kunne se tidligere ordre
 Er ordre afsendt eller ej? [x]
 Ordre detaljer skal vise stykliste
 
+
+Exception Handle bricks størrelser, kun hele ints
+fix frontcontroller til at håndtere alt med /* [?]
+
+https://github.com/SimonBojesen/LEGOHOUSE
+
+
+
+
+https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets
 
 
 https://github.com/mathiasbk1/LegoHus/blob/master/src/main/java/FunctionLayer/BrickCalculator.java

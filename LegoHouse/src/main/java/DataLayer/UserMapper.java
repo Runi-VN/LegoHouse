@@ -17,8 +17,8 @@ public class UserMapper {
 
     public static void createUser( User user ) throws UserException {
         try {
-            Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
+            Connection con = DBConnector.connection();
+            String SQL = "INSERT INTO User (email, password, role) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
@@ -35,8 +35,8 @@ public class UserMapper {
 
     public static User login( String email, String password ) throws UserException {
         try {
-            Connection con = Connector.connection();
-            String SQL = "SELECT id, role FROM Users "
+            Connection con = DBConnector.connection();
+            String SQL = "SELECT id, role FROM User "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -49,7 +49,7 @@ public class UserMapper {
                 user.setId( id );
                 return user;
             } else {
-                throw new UserException( "Could not validate user" );
+                throw new UserException( "Could not validate user information, try again" );
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
             throw new UserException(ex.getMessage());

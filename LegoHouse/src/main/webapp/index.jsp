@@ -4,53 +4,35 @@
     Author     : kasper
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome page</title>
-    </head>
-    <body>
-        <h1>Welcome to Sem 2</h1>
-        
-        <table>
-            <tr><td>Login</td>
-                <td>
-                    <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="command" value="login">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-                <td>Or Register</td>
-                <td>
-                    <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="command" value="register">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password1" value="sesam">
-                        <br>
-                        Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-            </tr>
-        </table>
-        <% String error = (String) request.getAttribute( "error");
-           if ( error != null) { 
-               out.println("<H2>Error!!</h2>");
-               out.println(error);
-           }
-        %>
-    </body>
-</html>
+<jsp:include page='WEB-INF/Header.jsp'></jsp:include>
+    <h2>Welcome to LegoHouse</h2>
+    <div id="Parent" class="col-md-offset-4">
+        <form id="allForms" name="login" action="FrontController" method="POST" class="">
+            <label for="login">Login</label><br>
+            <input type="hidden" name="command" value="login">
+            <label for="email">Email</label>
+            <input type="email" name="email" value="" placeholder="E-mail" required>
+            <br> <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required>
+            <br>
+            <input id="submitButton" type="submit" value="Submit">
+        </form>
+
+        <form id="allForms" name="register" action="FrontController" method="POST" class="">
+            <label for="login"> Register</label><br>
+            <input type="hidden" name="command" value="register">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <br>
+            <label for="password1">Password</label>
+            <input type="password" name="password1" placeholder="Password" required>
+            <br>
+            <label for="password2">Retype password</label>
+            <input type="password" name="password2" placeholder="Same password"required >
+            <br>
+            <input id="submitButton" type="submit" value="Submit">
+        </form>
+    </div>
+
+
+<jsp:include page='WEB-INF/Footer.jsp'></jsp:include>

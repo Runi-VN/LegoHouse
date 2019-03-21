@@ -6,11 +6,11 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * The purpose of Connector is to...
+ * The purpose of DBConnector is to...
  *
  * @author runi
  */
-public class Connector
+public class DBConnector
 {
 
 //    private static final String URL = "localhost";
@@ -18,9 +18,9 @@ public class Connector
 //    private static final String PASSWORD = "1234";
     private static final String IP = "localhost";
     private static final String PORT = "3306";
-    public static final String DATABASE = "lego";
+    public static final String DATABASE = "legohouse";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "root"; //laptop: root //desktop: 1234
 
     private static Connection singleton;
 
@@ -51,8 +51,9 @@ public class Connector
                 System.out.println("Connection correctly established to the database: " + DATABASE);
             } catch (InstantiationException | IllegalAccessException ex)
             {
-                ex.printStackTrace();
-                throw new SQLException(ex.getMessage());
+                /*ex.printStackTrace();*/
+                System.out.println(ex);
+                throw new SQLException("Error accessing database (#1338)");
             }
             //singleton = DriverManager.getConnection("jdbc:mysql://"+URL, USERNAME, PASSWORD);
         }

@@ -22,7 +22,7 @@ public class User
     private String email;
     private String password; // Should be hashed and secured
     private String role;
-    private List<Order> orders;
+    private List<Order> orderList;
 
     public String getEmail()
     {
@@ -63,15 +63,20 @@ public class User
     {
         this.id = id;
     }
+    
+    public void addToOrderList(Order order)
+    {
+       orderList.add(order);
+    }
 
     public List<Order> getOrders()
     {
-        return orders;
+        return orderList;
     }
 
     public void setOrders(List<Order> orders)
     {
-        this.orders = orders;
+        this.orderList = orders;
     }
 
     @Override
@@ -82,7 +87,7 @@ public class User
         hash = 47 * hash + Objects.hashCode(this.email);
         hash = 47 * hash + Objects.hashCode(this.password);
         hash = 47 * hash + Objects.hashCode(this.role);
-        hash = 47 * hash + Objects.hashCode(this.orders);
+        hash = 47 * hash + Objects.hashCode(this.orderList);
         return hash;
     }
 
@@ -118,7 +123,7 @@ public class User
         {
             return false;
         }
-        if (!Objects.equals(this.orders, other.orders))
+        if (!Objects.equals(this.orderList, other.orderList))
         {
             return false;
         }
