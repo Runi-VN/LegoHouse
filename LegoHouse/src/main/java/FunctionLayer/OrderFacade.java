@@ -1,6 +1,8 @@
 package FunctionLayer;
 
-import DataLayer.OrderMapper;
+import DataLayer.Mappers.OrderMapper;
+import DataLayer.Mappers.UserMapper;
+import java.util.ArrayList;
 
 /**
  *
@@ -8,6 +10,17 @@ import DataLayer.OrderMapper;
  */
 public class OrderFacade
 {
+
+    private static OrderFacade instance = null;
+
+    public synchronized static OrderFacade getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new OrderFacade();
+        }
+        return instance;
+    }
 
     /**
      * Creates an order from desired parameters, adds it to database.
@@ -24,10 +37,10 @@ public class OrderFacade
      * @return
      * @throws OrderException custom exception to handle later
      */
-    public  Order createOrder(int length, int width, int height, int userID) throws OrderException
+    public Order createOrder(int length, int width, int height, int userID) throws OrderException
     {
         Order order = new Order(length, width, height, userID); //Desired info
-        OrderMapper.createOrder(order); //Create order in database
+        OrderMapper.getInstance().createOrder(order); //Create order in database
         return order; //If no exception, return desired order with correct ID and status.
     }
 
@@ -39,20 +52,32 @@ public class OrderFacade
      * @return returns true if update went correctly, false if not
      * @throws OrderException custom exception to handle later
      */
-    public  boolean updateOrderStatus(int order_id, Boolean status) throws OrderException
+    public boolean updateOrderStatus(int order_id, Boolean status) throws OrderException
     {
-        return OrderMapper.updateStatus(order_id, status);
+        return OrderMapper.getInstance().updateStatus(order_id, status);
     }
 
     /**
      * Returns a single order ID through the database based on its ID.
+     *
      * @param OrderID
      * @return
      * @throws OrderException custom exception to handle later
      */
-    public  Order getSingleOrder(int OrderID) throws OrderException
+    public Order getSingleOrder(int OrderID) throws OrderException
     {
-        return OrderMapper.getOrderByID(OrderID);
+        return OrderMapper.getInstance().getOrderByID(OrderID);
+    }
+    
+    /**
+     * 
+     * @param userID
+     * @return
+     * @throws OrderException 
+     */
+    public ArrayList<Order> getAllUserOrders (int userID) throws OrderException
+    {
+        return OrderMapper.getInstance().getAllOrdersByUserID(userID);
     }
 
 }

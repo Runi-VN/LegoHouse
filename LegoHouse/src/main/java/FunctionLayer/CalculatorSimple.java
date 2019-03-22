@@ -2,6 +2,8 @@ package FunctionLayer;
 
 /**
  *
+ * Only takes height for length, width & height. 
+ * 
  * @author runin
  */
 public class CalculatorSimple implements Calculator

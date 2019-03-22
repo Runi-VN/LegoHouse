@@ -1,11 +1,15 @@
 package PresentationLayer;
 
+import PresentationLayer.Commands.Login;
+import PresentationLayer.Commands.Register;
+import PresentationLayer.Commands.UnknownCommand;
+import PresentationLayer.Commands.OrderDetails;
 import FunctionLayer.UserException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-abstract class Command
+public abstract class Command
 {
 
     private static HashMap<String, Command> commands;
@@ -28,7 +32,7 @@ abstract class Command
         return commands.getOrDefault(commandName, new UnknownCommand());
     }
 
-    abstract String execute(HttpServletRequest request, HttpServletResponse response)
+    public abstract String execute(HttpServletRequest request, HttpServletResponse response)
             throws UserException;
 
 }

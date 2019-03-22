@@ -20,7 +20,7 @@ public class DBConnector
     private static final String PORT = "3306";
     public static final String DATABASE = "legohouse";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root"; //laptop: root //desktop: 1234
+    private static final String PASSWORD = "1234"; //laptop: root //desktop: 1234
 
     private static Connection singleton;
 

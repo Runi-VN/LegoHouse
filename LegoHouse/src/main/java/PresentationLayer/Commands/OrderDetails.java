@@ -1,12 +1,14 @@
-package PresentationLayer;
+package PresentationLayer.Commands;
 
 import FunctionLayer.Order;
 import FunctionLayer.OrderException;
 import FunctionLayer.OrderFacade;
 import FunctionLayer.User;
 import FunctionLayer.UserException;
+import PresentationLayer.Command;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,11 +20,11 @@ public class OrderDetails extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
         User sessionUser = (User) request.getSession().getAttribute("user");
-        int orderID = Integer.parseInt(request.getParameter("orderID"));
-        OrderFacade of = new OrderFacade();
+        int orderID = Integer.parseInt(request.getParameter("id"));
+        OrderFacade of = OrderFacade.getInstance();
 
         try
         {
@@ -37,10 +39,9 @@ public class OrderDetails extends Command
                 }
             }
 
-            request.setAttribute("order", o);
+            request.setAttribute("order", o); //This doesn't work
 
-        }
-        catch (OrderException ex)
+        } catch (OrderException ex)
         {
             request.setAttribute("error", "Order does not belong to you. (#405)");
             Logger.getLogger(OrderDetails.class.getName()).log(Level.SEVERE, null, ex);

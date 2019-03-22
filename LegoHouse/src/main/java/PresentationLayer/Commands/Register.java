@@ -1,8 +1,9 @@
-package PresentationLayer;
+package PresentationLayer.Commands;
 
 import FunctionLayer.UserFacade;
 import FunctionLayer.UserException;
 import FunctionLayer.User;
+import PresentationLayer.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpSession;
 public class Register extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws UserException {
+    public String execute( HttpServletRequest request, HttpServletResponse response ) throws UserException {
         UserFacade uf = new UserFacade();
         String email = request.getParameter( "email" );
         String password1 = request.getParameter( "password1" );

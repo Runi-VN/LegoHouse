@@ -3,10 +3,15 @@
     Created on : Aug 22, 2017, 2:33:37 PM
     Author     : kasper
 --%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="FunctionLayer.OrderFacade"%>
+<%@page import="FunctionLayer.Order"%>
+<%@page import="FunctionLayer.Order"%>
 <%@page import="FunctionLayer.User"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%
     User user = (User) session.getAttribute("user");
+    ArrayList<Order> allUserOrders = OrderFacade.getInstance().getAllUserOrders(user.getId());
 
     /*if (user == null) //should be handled in frontcontroller
     {
@@ -29,21 +34,27 @@
         <input type="number" min="2" placeholder="Width" required><br>
         <input type="submit" value="Submit">
 
-        <p>Print table of previous orders here</p>
-        <table>
-            <thead>
-            <th>OrderID</th>
-            <th>Order status</th>
-            <th>Order Details</th>
-            </thead>
-            <tbody>
-                <tr></tr>
-            </tbody>
+        <div id="tablediv" class="padding">
 
-            <tfoot>
-
-            </tfoot>
-        </table>
+            <label for="table">Previous orders</label>
+            <table class="table">
+                <tr>
+                    <th>OrderID</th>
+                    <th>Order status</th>
+                    <th>Order Details</th>
+                <tr>
+                    <%for (int i = 0; i < allUserOrders.size(); i++)
+                        {%>
+                <tr>
+                    <td> <%= allUserOrders.get(i).getOrderID()%></td>
+                    <td> <%= allUserOrders.get(i).getStatus_sent()%></td>
+                    <td> <a href="?command=orderdetails&id=<%=allUserOrders.get(i).getOrderID()%>"> Order details</a>
+                    </td>
+                </tr>
+                <% }
+                %>
+            </table>
+        </div>
         <!--</form>
         <form id="allForms" name="myOrders" action="FrontController" method="POST">
             <label>Previous orders</label><br>

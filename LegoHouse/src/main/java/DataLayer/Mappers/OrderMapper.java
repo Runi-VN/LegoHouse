@@ -1,6 +1,6 @@
-package DataLayer;
+package DataLayer.Mappers;
 
-import FunctionLayer.UserException;
+import DataLayer.DBConnector;
 import FunctionLayer.Order;
 import FunctionLayer.OrderException;
 import java.sql.Connection;
@@ -17,7 +17,18 @@ import java.util.ArrayList;
 public class OrderMapper
 {
 
-    public static void createOrder(Order order) throws OrderException
+    private static OrderMapper instance = null;
+
+    public synchronized static OrderMapper getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new OrderMapper();
+        }
+        return instance;
+    }
+
+    public void createOrder(Order order) throws OrderException
     {
         try
         {
@@ -43,15 +54,14 @@ public class OrderMapper
             boolean status = rs.getBoolean(5); //Fifth result row (boolean status_sent)
             order.setOrderID(id);
             order.setStatus_sent(status);
-        }
-        catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Error creating order: \n" + ex.getMessage());
         }
         // return true;
     }
 
-    public static boolean updateStatus(int orderID, boolean newStatus) throws OrderException
+    public boolean updateStatus(int orderID, boolean newStatus) throws OrderException
     {
         int result;
         try
@@ -65,8 +75,7 @@ public class OrderMapper
             stmt.setBoolean(1, newStatus);
             stmt.setInt(2, orderID);
             result = stmt.executeUpdate();
-        }
-        catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Error updating order status: \n" + ex.getMessage());
         }
@@ -80,7 +89,7 @@ public class OrderMapper
      * @return list of orders
      * @throws OrderException throws exception
      */
-    public static ArrayList<Order> getAllOrdersByUserID(int userID) throws OrderException
+    public ArrayList<Order> getAllOrdersByUserID(int userID) throws OrderException
     {
         ArrayList<Order> allUserOrders = new ArrayList<>();
         try
@@ -103,8 +112,7 @@ public class OrderMapper
                 o.setStatus_sent(status_sent);
                 allUserOrders.add(o);
             }
-        }
-        catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Error retrieving USER orders from database: \n" + ex.getMessage());
         }
@@ -120,7 +128,7 @@ public class OrderMapper
      * @param orderID
      * @return
      */
-    public static Order getOrderByID(int orderID) throws OrderException
+    public Order getOrderByID(int orderID) throws OrderException
     {
         Order o = null;
         try
@@ -142,15 +150,14 @@ public class OrderMapper
                 o.setOrderID(orderID);
                 o.setStatus_sent(status_sent);
             }
-        }
-        catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Error retrieving specific order from database: \n" + ex.getMessage());
         }
         return o;
     }
 
-    public static ArrayList<Order> getAllOrders() throws OrderException
+    public ArrayList<Order> getAllOrders() throws OrderException
     {
         ArrayList<Order> allOrders = new ArrayList<>();
         try
@@ -172,8 +179,7 @@ public class OrderMapper
                 o.setStatus_sent(status_sent);
                 allOrders.add(o);
             }
-        }
-        catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Unable to retrieve all orders from database: \n" + ex.getMessage());
         }
