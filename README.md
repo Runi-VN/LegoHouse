@@ -5,9 +5,8 @@ This project is the second project of the second semester and was made directly 
 [Project description](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html)
 
 ### Discussion
-The purpose of the project is to ensure that we (students) had all learned the same required knowledge from the Cupcake project. Therefore the project was made individually.  
-
-This was primarily because we worked as 3-5-man groups, so some students might have missed out on some parts, i.e. how to use JDBC to connect to a database.
+The purpose of the project is to ensure that we (students) had all learned the same required knowledge from the Cupcake project. Seeing as the project was developed in teams of 3-5 students, some might have missed out on essential knowledge.  
+Therefore this project was made individually.  
 
 Due to this, the overall design and some parts are straight up ripped from the Cupcake project.
 
