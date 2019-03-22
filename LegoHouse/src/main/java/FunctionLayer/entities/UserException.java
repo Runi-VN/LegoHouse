@@ -1,4 +1,4 @@
-package FunctionLayer;
+package FunctionLayer.entities;
 
 /**
  * The purpose of UserException is to...

@@ -1,8 +1,8 @@
 
-import FunctionLayer.Order;
-import FunctionLayer.User;
-import FunctionLayer.UserException;
-import FunctionLayer.UserFacade;
+import FunctionLayer.entities.Order;
+import FunctionLayer.entities.User;
+import FunctionLayer.entities.UserException;
+import FunctionLayer.entities.UserFacade;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

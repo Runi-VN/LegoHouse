@@ -35,6 +35,14 @@ INSERT INTO `user` VALUES
 (default,'jens@somewhere.com','jensen','customer'),
 (default,'ken@somewhere.com','kensen','customer'),
 (default,'robin@somewhere.com','batman','employee'),
-(default,'admin@admin.dk', '1234', 'employee');
+(default,'admin@admin.dk', '1234', 'employee'),
+(default, 'runiniclasen@hotmail.com', '1234', 'customer');
+
+LOCK TABLES `orders` WRITE;
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`) VALUES (default, '10', '10', '1', default, '5');
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`) VALUES (default, '10', '10', '2', default, '5');
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`) VALUES (default, '20', '20', '1', default, '5');
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`) VALUES (default, '20', '20', '2', default, '5');
+
 UNLOCK TABLES;
 

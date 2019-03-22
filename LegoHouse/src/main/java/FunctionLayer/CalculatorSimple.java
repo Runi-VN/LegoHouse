@@ -1,8 +1,11 @@
 package FunctionLayer;
 
+import FunctionLayer.entities.Bricks;
+import FunctionLayer.entities.Order;
+
 /**
  *
- * Only takes height for length, width & height. 
+ * Only takes account for length, width & height. 
  * 
  * @author runin
  */

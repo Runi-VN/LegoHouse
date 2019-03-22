@@ -4,11 +4,12 @@
     Author     : Runi
 --%>
 
-<%@page import="FunctionLayer.Order"%>
-<%@page import="FunctionLayer.User"%>
+<%@page import="FunctionLayer.entities.Order"%>
+<%@page import="FunctionLayer.entities.User"%>
 <%
     User sessionUser = (User) request.getSession().getAttribute("user");
-    Order o = (Order) request.getSession().getAttribute("order");
+    Order o = (Order) request.getAttribute("order");
+    Order oo = new Order(25, 20, 2, 1);
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

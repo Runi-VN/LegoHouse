@@ -1,10 +1,10 @@
 package PresentationLayer.Commands;
 
-import FunctionLayer.Order;
-import FunctionLayer.OrderException;
-import FunctionLayer.OrderFacade;
-import FunctionLayer.User;
-import FunctionLayer.UserException;
+import FunctionLayer.entities.Order;
+import FunctionLayer.entities.OrderException;
+import FunctionLayer.entities.OrderFacade;
+import FunctionLayer.entities.User;
+import FunctionLayer.entities.UserException;
 import PresentationLayer.Command;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,7 +39,7 @@ public class OrderDetails extends Command
                 }
             }
 
-            request.setAttribute("order", o); //This doesn't work
+            request.setAttribute("order", o); 
 
         } catch (OrderException ex)
         {

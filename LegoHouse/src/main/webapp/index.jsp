@@ -10,7 +10,7 @@
         <form id="allForms" name="login" action="FrontController" method="POST" class="">
             <label for="login">Login</label><br>
             <input type="hidden" name="command" value="login">
-            <label for="email">Email</label>
+            <label for="email">E-mail</label>
             <input type="email" name="email" value="" placeholder="E-mail" required>
             <br> <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" required>

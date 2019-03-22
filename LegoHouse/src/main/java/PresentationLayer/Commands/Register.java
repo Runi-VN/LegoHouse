@@ -1,8 +1,8 @@
 package PresentationLayer.Commands;
 
-import FunctionLayer.UserFacade;
-import FunctionLayer.UserException;
-import FunctionLayer.User;
+import FunctionLayer.entities.UserFacade;
+import FunctionLayer.entities.UserException;
+import FunctionLayer.entities.User;
 import PresentationLayer.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

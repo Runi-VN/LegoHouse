@@ -50,6 +50,10 @@ https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets
 https://github.com/mathiasbk1/LegoHus/blob/master/src/main/java/FunctionLayer/BrickCalculator.java
 
 
+FINAL DOINGS:
+TJEK
+https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets
+
 
 FLAWS:
 RequestDispatch virker ikke ved OrderDetails eftersom at den requester af to omgange og attribute-objekter går tabt.

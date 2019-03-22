@@ -3,11 +3,10 @@
     Created on : Aug 22, 2017, 2:33:37 PM
     Author     : kasper
 --%>
+<%@page import="FunctionLayer.entities.User"%>
+<%@page import="FunctionLayer.entities.Order"%>
+<%@page import="FunctionLayer.entities.OrderFacade"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="FunctionLayer.OrderFacade"%>
-<%@page import="FunctionLayer.Order"%>
-<%@page import="FunctionLayer.Order"%>
-<%@page import="FunctionLayer.User"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%
     User user = (User) session.getAttribute("user");

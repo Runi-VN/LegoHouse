@@ -1,6 +1,6 @@
 package PresentationLayer;
 
-import FunctionLayer.UserException;
+import FunctionLayer.entities.UserException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

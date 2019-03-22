@@ -1,5 +1,8 @@
 package FunctionLayer;
 
+import FunctionLayer.entities.Bricks;
+import FunctionLayer.entities.Order;
+
 /**
  *
  * @author runin
