@@ -111,6 +111,45 @@ public class OrderMapper
         return allUserOrders;
     }
 
+    /**
+     * Retrieve a single order from database based on its ID. (Order ID)
+     *
+     * Make sure to check for ownership on userID.
+     *
+     *
+     * @param orderID
+     * @return
+     */
+    public static Order getOrderByID(int orderID) throws OrderException
+    {
+        Order o = null;
+        try
+        {
+            Connection con = DBConnector.connection();
+            String SQL = "SELECT * FROM legohouse.orders WHERE orders.order_id = ?;";
+            PreparedStatement stmt = con.prepareStatement(SQL);
+            stmt.setInt(1, orderID);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next())
+            {
+                int length = rs.getInt("length");
+                int width = rs.getInt("width");
+                int height = rs.getInt("height");
+                int user_id = rs.getInt("user_id");
+                boolean status_sent = rs.getBoolean("status_sent");
+                o = new Order(length, width, height, user_id);
+                o.setOrderID(orderID);
+                o.setStatus_sent(status_sent);
+            }
+        }
+        catch (SQLException | ClassNotFoundException ex)
+        {
+            throw new OrderException("Error retrieving specific order from database: \n" + ex.getMessage());
+        }
+        return o;
+    }
+
     public static ArrayList<Order> getAllOrders() throws OrderException
     {
         ArrayList<Order> allOrders = new ArrayList<>();

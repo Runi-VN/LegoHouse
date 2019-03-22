@@ -1,4 +1,4 @@
-
+Virker !user og !admin i OrderDetails? Sammenlign med CMD_CustomerInvoiceDetails
 
 
 1 custom exception class instead of multiple (UserException, OrderException)
@@ -14,6 +14,7 @@ Ordre detaljer skal vise stykliste
 
 Exception Handle bricks størrelser, kun hele ints
 fix frontcontroller til at håndtere alt med /* [?]
+javadoc
 
 https://github.com/SimonBojesen/LEGOHOUSE
 
