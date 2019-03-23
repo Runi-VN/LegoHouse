@@ -1,8 +1,9 @@
 
 import FunctionLayer.entities.Order;
 import FunctionLayer.entities.User;
-import FunctionLayer.entities.UserException;
-import FunctionLayer.entities.UserFacade;
+import FunctionLayer.UserException;
+import FunctionLayer.UserFacade;
+import FunctionLayer.entities.Bricks;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,16 +21,25 @@ public class Main
 
     public static void main(String[] args)
     {
-        UserFacade uf = new UserFacade();
-        try
-        {
-            uf.createUser("Johnson@dr.dk", "1234");
-        }
-        catch (UserException ex)
-        {
-            System.out.println("wrong");
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+        Order or = new Order(23, 5, 1, 0);
+        System.out.println(or.toString());
+        Bricks br = new Bricks(11, 1, 0);
+        System.out.println(br.toString());
+        
+        
+        
+        
+//        UserFacade uf = new UserFacade();
+//        try
+//        {
+//            uf.createUser("Johnson@dr.dk", "1234");
+//        }
+//        catch (UserException ex)
+//        {
+//            System.out.println("wrong");
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         /*
         User user = new User("", "", "");
         user.getOrders().add(new Order(0, 0, 0, 0));

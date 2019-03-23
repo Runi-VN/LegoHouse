@@ -11,5 +11,7 @@ public interface Calculator
 {
 
     Bricks calculateBricks(Order order);
-
+    
+    Bricks calculateRowBricks (int brickAmount);
+    Bricks CalculateTotalHouseBricks(Bricks lengthBricks, Bricks widthBricks, int height);
 }

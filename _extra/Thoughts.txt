@@ -19,6 +19,8 @@ Orders arraylist on user? hvordan binder vi invoices til user? se CMD_checkout
 
 Efter første algoritme: Tilføj vinduer og døre til ordre + db
 
+Errorhandling af brugere ved bestilling: smid en error kode og saml den op, lav en if-case baseret på koden og smid en relateret besked. Custom messages, woo!
+
 
 Javadoc
 Flere tests

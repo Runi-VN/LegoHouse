@@ -1,6 +1,7 @@
-package FunctionLayer.entities;
+package FunctionLayer;
 
 import DataLayer.Mappers.UserMapper;
+import FunctionLayer.entities.User;
 
 /**
  *

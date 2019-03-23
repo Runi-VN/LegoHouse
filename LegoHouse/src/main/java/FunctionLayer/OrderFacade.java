@@ -1,7 +1,8 @@
-package FunctionLayer.entities;
+package FunctionLayer;
 
 import DataLayer.Mappers.OrderMapper;
 import DataLayer.Mappers.UserMapper;
+import FunctionLayer.entities.Order;
 import java.util.ArrayList;
 
 /**

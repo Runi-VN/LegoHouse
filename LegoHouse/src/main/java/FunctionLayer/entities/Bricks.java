@@ -6,13 +6,14 @@ package FunctionLayer.entities;
  */
 public class Bricks
 {
-    
+
     private int fours;
     private int twos;
     private int ones;
 
     /**
      * Functions as a unit count of the bricks
+     *
      * @param fours 2x4
      * @param twos 2x2
      * @param ones 1x2
@@ -53,8 +54,10 @@ public class Bricks
     {
         this.ones = ones;
     }
-    
-    
-    
-    
+
+    public int getTotal()
+    {
+        return fours + twos + ones;
+    }
+
 }

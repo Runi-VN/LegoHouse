@@ -1,10 +1,10 @@
 package PresentationLayer.Commands;
 
 import FunctionLayer.entities.Order;
-import FunctionLayer.entities.OrderException;
-import FunctionLayer.entities.OrderFacade;
+import FunctionLayer.OrderException;
+import FunctionLayer.OrderFacade;
 import FunctionLayer.entities.User;
-import FunctionLayer.entities.UserException;
+import FunctionLayer.UserException;
 import PresentationLayer.Command;
 import java.util.logging.Level;
 import java.util.logging.Logger;

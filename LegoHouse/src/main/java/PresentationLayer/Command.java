@@ -4,7 +4,7 @@ import PresentationLayer.Commands.Login;
 import PresentationLayer.Commands.Register;
 import PresentationLayer.Commands.UnknownCommand;
 import PresentationLayer.Commands.OrderDetails;
-import FunctionLayer.entities.UserException;
+import FunctionLayer.UserException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

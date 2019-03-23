@@ -9,12 +9,11 @@
 <%
     User sessionUser = (User) request.getSession().getAttribute("user");
     Order o = (Order) request.getAttribute("order");
-    Order oo = new Order(25, 20, 2, 1);
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page='Header.jsp'></jsp:include>
-<h2>Order details: Order #<%=o.getOrderID() %> </h2>
+<h2>Order details: Order #<%=o.getOrderID()%> </h2>
 <div id="orderDetailsMain">
     <p>User # <%= sessionUser.getId()%> | <%= sessionUser.getEmail()%></p>
     <p>Table goes here</p>
