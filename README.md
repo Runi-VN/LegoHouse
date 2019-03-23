@@ -15,10 +15,55 @@ This program takes use of the [sample login](https://github.com/DAT2SemKode/Modu
 ### Installation and use
 1) Set up your database using the included SQL script. (Found in \_extra)
 2) Change the DBConnector to your setup. (Found in the data layer)
-3) Clean and build. **The tests should fail**, considering you haven't set up a test database for my specific project. Either delete them or comment them out.  
+3) Clean and build -> Run. 
 
+Any tests included should/could fail because they take use of a test database not included.
 
 ## Completed requirements:
+
+### Simple walkthrough of algorithm  
+For this walkthrough I only take account of the length of one side ("length") of the building.
+```java  
+public Bricks calculateBricks(Order order)
+    {
+        int length = order.getLength();
+        Bricks bricks = null;
+        
+        /*We always want as many 4's as possible, then 2's, then 1's if necessary. (Hint: Uneven length)
+          Generally speaking: 
+          N/10 = left digit
+          N%10 = right digit
+          When we divide we get the actual count or "potential difference".
+          When we use the modulus operator (%) we get the remainder*/
+        
+        /*IMPORTANT: Integers (in our case ints) do not allow decimals in the same way a double does. 
+        In case of a decimal, we ALWAYS round down. 
+        This will be used to our advantage*/
+        
+        
+        //For our purpose lets test with the length 23
+        int CalcFours = (length / 4);     //(23/4) = 5,75 ~ 5.
+        int CalcRemainder = (length % 4); //(23%4) = 3. 
+        
+        //We do not have a 3-dot brick, so we need to apply the above technique to Twos.
+        
+        int CalcTwos = (CalcRemainder/2); //(3/2) = 1.5 ~ 1.
+        //We still do not have a three-dot brick, but we do have a 1-dot brick to fix our problem.
+        
+        int CalcOnes = (CalcRemainder%2); //(3%2) = 1. 
+        /*REMEMBER! This takes height of equal numbers and will always give 0 in that case 
+        (if a 1-brick is not needed)*/
+        
+        //So the results should now be:
+        //fours = 5 = 20
+        //twos = 1 = 2
+        //ones = 1 = 1
+        //total: 23
+        
+        return bricks = (new Bricks(CalcFours, CalcTwos, CalcOnes));
+        
+    }
+```  
 
 ### Kundekrav
 Som kunde vil jeg gerne kunne oprette en ordre på et lego hus, sådan at jeg kan få en stykliste for huset. Ordren skal indeholde længde og bredde af lego husets vægge (angives i antal “prikker” huset skal være på hver led), samt hvor mange klodser man ønsker det skal være højt.
