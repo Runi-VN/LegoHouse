@@ -30,7 +30,10 @@ public Bricks calculateBricks(Order order)
         Bricks bricks = null;
         
         /*We always want as many 4's as possible, then 2's, then 1's if necessary. (Hint: Uneven length)
-          When we divide we get the difference
+          Generally speaking: 
+          N/10 = left digit
+          N%10 = right digit
+          When we divide we get the actual count or "potential difference".
           When we use the modulus operator (%) we get the remainder*/
         
         /*IMPORTANT: Integers (in our case ints) do not allow decimals in the same way a double does. 
