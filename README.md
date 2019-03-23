@@ -47,7 +47,8 @@ public Bricks calculateBricks(Order order)
         //We still do not have a three-dot brick, but we do have a 1-dot brick to fix our problem.
         
         int CalcOnes = (CalcRemainder%2); //(3%2) = 1. 
-        /*REMEMBER! this takes height of equal numbers and will always give 0 in that case (if a 1-brick is not needed)*/
+        /*REMEMBER! this takes height of equal numbers and will always give 0 in that case 
+        (if a 1-brick is not needed)*/
         
         //So the results should now be:
         //fours = 5 = 20
