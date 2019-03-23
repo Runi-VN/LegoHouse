@@ -28,7 +28,7 @@ public Bricks calculateBricks(Order order)
         int length = order.getLength();
         Bricks bricks = null;
         
-        /*We always want as many 4's as possible, then 2's, then 1's if necessary.
+        /*We always want as many 4's as possible, then 2's, then 1's if necessary. (Hint: Uneven length)
           When we divide we get the difference
           When we use the modulus operator (%) we get the remainder*/
         
