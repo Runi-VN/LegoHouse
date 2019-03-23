@@ -22,7 +22,7 @@ Any tests included should/could fail because they take use of a test database no
 ## Completed requirements:
 
 ### Simple walkthrough of algorithm  
-For this walkthrough I only take account of the length.
+For this walkthrough I only take account of the length of one side ("length") of the building.
 ```java  
 public Bricks calculateBricks(Order order)
     {
