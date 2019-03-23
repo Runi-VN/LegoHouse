@@ -58,7 +58,7 @@ public Bricks calculateBricks(Order order)
         return bricks = (new Bricks(CalcFours, CalcTwos, CalcOnes));
         
     }
-    ```  
+```  
 
 ### Kundekrav
 Som kunde vil jeg gerne kunne oprette en ordre på et lego hus, sådan at jeg kan få en stykliste for huset. Ordren skal indeholde længde og bredde af lego husets vægge (angives i antal “prikker” huset skal være på hver led), samt hvor mange klodser man ønsker det skal være højt.
