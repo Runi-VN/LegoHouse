@@ -20,6 +20,46 @@ This program takes use of the [sample login](https://github.com/DAT2SemKode/Modu
 
 ## Completed requirements:
 
+### Simple walkthrough of algorithm  
+For this walkthrough I only take account of the length.
+```java  
+public Bricks calculateBricks(Order order)
+    {
+        int length = order.getLength();
+        Bricks bricks = null;
+        
+        /*We always want as many 4's as possible, then 2's, then 1's if necessary.
+          When we divide we get the difference
+          When we use the modulus operator (%) we get the remainder*/
+        
+        /*IMPORTANT: Integers (in our case ints) do not allow decimals in the same way a double does. 
+        In case of a decimal, we ALWAYS round down. 
+        This will be used to our advantage*/
+        
+        
+        //For our purpose lets test with the length 23
+        int CalcFours = (length / 4);     //(23/4) = 5,75 ~ 5 (remainder .75)
+        int CalcRemainder = (length % 4); //(23%4) = 3. 
+        
+        //We do not have a 3-dot brick, so we need to apply the above technique to Twos.
+        
+        int CalcTwos = (CalcRemainder/2); //(3/2) = 1.5. 
+        //We still do not have a three-dot brick, but we do have a 1-dot brick to fix our problem.
+        
+        int CalcOnes = (CalcRemainder%2); //(3%2) = 1. 
+        /*REMEMBER! this takes height of equal numbers and will always give 0 in that case (if a 1-brick is not needed)*/
+        
+        //So the results should now be:
+        //fours = 5 = 20
+        //twos = 1 = 2
+        //ones = 1 = 1
+        //total: 23
+        
+        return bricks = (new Bricks(CalcFours, CalcTwos, CalcOnes));
+        
+    }
+    ```  
+
 ### Kundekrav
 Som kunde vil jeg gerne kunne oprette en ordre på et lego hus, sådan at jeg kan få en stykliste for huset. Ordren skal indeholde længde og bredde af lego husets vægge (angives i antal “prikker” huset skal være på hver led), samt hvor mange klodser man ønsker det skal være højt.
 
