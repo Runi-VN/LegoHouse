@@ -42,12 +42,12 @@ public Bricks calculateBricks(Order order)
         
         
         //For our purpose lets test with the length 23
-        int CalcFours = (length / 4);     //(23/4) = 5,75 ~ 5
+        int CalcFours = (length / 4);     //(23/4) = 5,75 ~ 5.
         int CalcRemainder = (length % 4); //(23%4) = 3. 
         
         //We do not have a 3-dot brick, so we need to apply the above technique to Twos.
         
-        int CalcTwos = (CalcRemainder/2); //(3/2) = 1.5. 
+        int CalcTwos = (CalcRemainder/2); //(3/2) = 1.5 ~ 1.
         //We still do not have a three-dot brick, but we do have a 1-dot brick to fix our problem.
         
         int CalcOnes = (CalcRemainder%2); //(3%2) = 1. 
