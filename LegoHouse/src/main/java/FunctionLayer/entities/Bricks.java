@@ -2,6 +2,12 @@ package FunctionLayer.entities;
 
 /**
  *
+ * A LEGO brick object.
+ * 
+ * One lego brick is measured in dots - four/two/one.
+ * 
+ * Equal for all bricks: The brick width is 2 dots.
+ * 
  * @author runin
  */
 public class Bricks

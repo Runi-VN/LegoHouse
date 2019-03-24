@@ -20,12 +20,33 @@ public class CalculatorSimple implements Calculator
         int length = order.getLength();
         int width = order.getWidth();
         int height = order.getHeight();
-        
 
+        /*A single brick unit has a default width of 2 "dots" -- When this brick corners up to another brick, we are faced with a problem.*/
+        length = length - 2; //Taking account of bricks accumulating in corners
+        width = width - 2; //Taking account of bricks accumulating in corners
+
+        /*Example:
+        New order: (23,5,1) (length, width, height)
+        We subtract -2 to counter corner bricks as written above, so actual count is >(21,3,1)<
+                Length:
+            21/4 = 5
+            21%4 = 1 (remainder - used for next calc)
+            1/2 = 0
+            1%2 = 1
+                    length = (5,0,1) * 2 = (10,0,2) (fours, twos, ones)
+                Width:
+            3/4 = 0
+            3%4 = 3 (remainder - used for next calc)
+            3/2 = 1
+            3%2 = 1
+                    width = (0, 1, 1) * 2 = (0, 2, 2)  (fours, twos, ones)
+
+        Total:  (length+width) (10,2,4) `(fours, twos, ones)`*/
+        
         Bricks lengthBricks = calculateRowBricks(length);
-        System.out.println(lengthBricks.getTotal() + "\n________");
+        //System.out.println(lengthBricks.getTotal() + "\n--");
         Bricks widthBricks = calculateRowBricks(width);
-        //System.out.println(widthBricks.getTotal());
+        System.out.println(widthBricks.getTotal());
         return CalculateTotalHouseBricks(lengthBricks, widthBricks, height);
     }
 
@@ -38,9 +59,9 @@ public class CalculatorSimple implements Calculator
     @Override
     public Bricks calculateRowBricks(int brickAmount)
     {
-        int CalcFours = (brickAmount / 4);
+        int CalcFours = (brickAmount / 4); //4 = bricksize
         int CalcRemainder = (brickAmount % 4);
-        int CalcTwos = (CalcRemainder / 2);
+        int CalcTwos = (CalcRemainder / 2); //2 = bricksize
         int CalcOnes = (CalcRemainder % 2);
         return new Bricks(CalcFours, CalcTwos, CalcOnes);
     }
