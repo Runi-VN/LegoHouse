@@ -23,9 +23,13 @@ This program takes use of the [sample login](https://github.com/DAT2SemKode/Modu
 ### Installation and use
 1) Set up your database using the included SQL script. (Found in \_extra)
 2) Change the DBConnector to your setup. (Found in the data layer)
-3) Clean and build -> Run. 
+3) Clean and build -> Run.
 
-Any tests included should/could fail because they take use of a test database not included.
+I have created users for you to use:  
+Employee: `employee@test.com`|`1234`  
+Customer: `customer@test.com`|`1234`
+
+Many of the tests included *could* fail because they take use of a test database not included.
 
 ## Completed requirements:
 
