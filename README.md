@@ -64,6 +64,9 @@ public Bricks calculateBricks(Order order)
         
     }
 ```  
+### Database E/R Diagram  
+This was based on the login database mentioned in discussion. I would/could have made this differently.
+<img src="https://i.imgur.com/prWZHLR.png" alt="Database E.R. Diagram">
 
 ### Kundekrav
 Som kunde vil jeg gerne kunne oprette en ordre på et lego hus, sådan at jeg kan få en stykliste for huset. Ordren skal indeholde længde og bredde af lego husets vægge (angives i antal “prikker” huset skal være på hver led), samt hvor mange klodser man ønsker det skal være højt.
