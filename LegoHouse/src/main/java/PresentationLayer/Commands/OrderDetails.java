@@ -1,5 +1,7 @@
 package PresentationLayer.Commands;
 
+import FunctionLayer.Calculator;
+import FunctionLayer.CalculatorSimple;
 import FunctionLayer.entities.Order;
 import FunctionLayer.OrderException;
 import FunctionLayer.OrderFacade;
@@ -40,6 +42,9 @@ public class OrderDetails extends Command
             }
 
             request.setAttribute("order", o); 
+            //Handle window/door calculation here (Search: future)
+            Calculator c = new CalculatorSimple();
+            request.setAttribute("bricks", c.calculateBricks(o));
 
         } catch (OrderException ex)
         {

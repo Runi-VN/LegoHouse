@@ -1,5 +1,6 @@
 package FunctionLayer.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class User
     private String email;
     private String password; // Should be hashed and secured
     private String role;
-    private List<Order> orderList;
+    private List<Order> orderList = new ArrayList<>();
 
     public String getEmail()
     {

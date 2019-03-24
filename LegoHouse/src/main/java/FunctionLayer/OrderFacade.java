@@ -38,11 +38,16 @@ public class OrderFacade
      * @return
      * @throws OrderException custom exception to handle later
      */
-    public Order createOrder(int length, int width, int height, int userID) throws OrderException
+    public Order createOrderByFields(int length, int width, int height, int userID) throws OrderException
     {
         Order order = new Order(length, width, height, userID); //Desired info
         OrderMapper.getInstance().createOrder(order); //Create order in database
         return order; //If no exception, return desired order with correct ID and status.
+    }
+
+    public Order createOrder(Order order) throws OrderException
+    {
+        return OrderMapper.getInstance().createOrder(order);
     }
 
     /**
@@ -69,14 +74,14 @@ public class OrderFacade
     {
         return OrderMapper.getInstance().getOrderByID(OrderID);
     }
-    
+
     /**
-     * 
+     *
      * @param userID
      * @return
-     * @throws OrderException 
+     * @throws OrderException
      */
-    public ArrayList<Order> getAllUserOrders (int userID) throws OrderException
+    public ArrayList<Order> getAllUserOrders(int userID) throws OrderException
     {
         return OrderMapper.getInstance().getAllOrdersByUserID(userID);
     }

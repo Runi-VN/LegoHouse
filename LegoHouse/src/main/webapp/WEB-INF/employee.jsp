@@ -8,7 +8,7 @@
 <jsp:include page='Header.jsp'></jsp:include>
     <h2>Employee page</h2>
     <h3>Hello <%=request.getParameter("email")%> </h3>
-<p>You are now logged in as an EMPLOYEE of our wonderful site.</p>
+<p>You are now logged in as an <strong>EMPLOYEE</strong> of our wonderful site.</p>
 
 <p>See all orders</p>
 <p>Change order status</p>

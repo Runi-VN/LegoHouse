@@ -11,12 +11,22 @@ public class Order
     private int length;
     private int width;
     private int height;
-    private boolean status_sent;
+    private boolean status_sent = false;
     private int userID;
+    private boolean hasWindow = false;
+    private boolean hasDoor = false;
 
-//    public Order()
-//    {
-//    }
+    public Order(int orderID, int length, int width, int height, boolean status_sent, int userID, boolean hasWindow, boolean hasDoor)
+    {
+        this.orderID = orderID;
+        this.length = length;
+        this.width = width;
+        this.height = height;
+        this.status_sent = status_sent;
+        this.userID = userID;
+        this.hasWindow = hasWindow;
+        this.hasDoor = hasDoor;
+    }
 
     public Order(int length, int width, int height, int userID)
     {
@@ -67,16 +77,10 @@ public class Order
     }
 
     public boolean getStatus_sent()
-    /*Same as below*/
     {
         return status_sent;
     }
 
-    /*
-    public boolean isStatus_sent() //Same as above
-    {
-        return status_sent;
-    }*/
     public void setStatus_sent(boolean status_sent)
     {
         this.status_sent = status_sent;
@@ -90,6 +94,26 @@ public class Order
     public void setUserID(int userID)
     {
         this.userID = userID;
+    }
+
+    public boolean getHasWindow()
+    {
+        return hasWindow;
+    }
+
+    public void setHasWindow(boolean hasWindow)
+    {
+        this.hasWindow = hasWindow;
+    }
+
+    public boolean getHasDoor()
+    {
+        return hasDoor;
+    }
+
+    public void setHasDoor(boolean hasDoor)
+    {
+        this.hasDoor = hasDoor;
     }
 
 }

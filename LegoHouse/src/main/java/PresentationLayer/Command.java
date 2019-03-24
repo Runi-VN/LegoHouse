@@ -5,6 +5,9 @@ import PresentationLayer.Commands.Register;
 import PresentationLayer.Commands.UnknownCommand;
 import PresentationLayer.Commands.OrderDetails;
 import FunctionLayer.UserException;
+import PresentationLayer.Commands.CreateOrderCommand;
+import PresentationLayer.Commands.CustomerCommand;
+import PresentationLayer.Commands.EmployeeCommand;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +23,9 @@ public abstract class Command
         commands.put("login", new Login());
         commands.put("register", new Register());
         commands.put("orderdetails", new OrderDetails());
+        commands.put("customer", new CustomerCommand());
+        commands.put("employee", new EmployeeCommand());
+        commands.put("createorder", new CreateOrderCommand());
     }
 
     static Command from(HttpServletRequest request)

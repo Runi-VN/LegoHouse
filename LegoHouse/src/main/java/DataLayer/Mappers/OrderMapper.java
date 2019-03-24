@@ -28,7 +28,7 @@ public class OrderMapper
         return instance;
     }
 
-    public void createOrder(Order order) throws OrderException
+    public Order createOrder(Order order) throws OrderException
     {
         try
         {
@@ -39,7 +39,7 @@ public class OrderMapper
                     + "`height`, "
                     + "`user_id`)"
                     + "VALUES"
-                    + "(?, ?, ?, ?, ?);";
+                    + "(?, ?, ?, ?);";
             PreparedStatement stmt = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, order.getLength());
             stmt.setInt(2, order.getWidth());
@@ -51,14 +51,18 @@ public class OrderMapper
             ResultSet rs = stmt.getGeneratedKeys(); //Get back result
             rs.next(); //First row
             int id = rs.getInt(1); //First result row (int OrderID)
-            boolean status = rs.getBoolean(5); //Fifth result row (boolean status_sent)
+            //boolean status = rs.getBoolean("status_sent"); 
+            //boolean window = rs.getBoolean("hasWindow"); 
+            //boolean door = rs.getBoolean("hasDoor"); 
             order.setOrderID(id);
-            order.setStatus_sent(status);
+            //order.setStatus_sent(status);
+            //order.setHasWindow(window);
+            //order.setHasDoor(door);
         } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException("Error creating order: \n" + ex.getMessage());
         }
-        // return true;
+        return order;
     }
 
     public boolean updateStatus(int orderID, boolean newStatus) throws OrderException
@@ -107,9 +111,13 @@ public class OrderMapper
                 int width = rs.getInt("width");
                 int height = rs.getInt("height");
                 boolean status_sent = rs.getBoolean("status_sent");
+                boolean hasWindow = rs.getBoolean("hasWindow");
+                boolean hasDoor = rs.getBoolean("hasDoor");
                 Order o = new Order(length, width, height, userID);
                 o.setOrderID(orderID);
                 o.setStatus_sent(status_sent);
+                o.setHasWindow(hasWindow);
+                o.setHasDoor(hasDoor);
                 allUserOrders.add(o);
             }
         } catch (SQLException | ClassNotFoundException ex)
@@ -146,9 +154,13 @@ public class OrderMapper
                 int height = rs.getInt("height");
                 int user_id = rs.getInt("user_id");
                 boolean status_sent = rs.getBoolean("status_sent");
+                boolean hasWindow = rs.getBoolean("hasWindow");
+                boolean hasDoor = rs.getBoolean("hasDoor");
                 o = new Order(length, width, height, user_id);
                 o.setOrderID(orderID);
                 o.setStatus_sent(status_sent);
+                o.setHasWindow(hasWindow);
+                o.setHasDoor(hasDoor);
             }
         } catch (SQLException | ClassNotFoundException ex)
         {
@@ -174,9 +186,13 @@ public class OrderMapper
                 int height = rs.getInt("height");
                 boolean status_sent = rs.getBoolean("status_sent");
                 int userID = rs.getInt("user_id");
+                boolean hasWindow = rs.getBoolean("hasWindow");
+                boolean hasDoor = rs.getBoolean("hasDoor");
                 Order o = new Order(length, width, height, userID);
                 o.setOrderID(orderID);
                 o.setStatus_sent(status_sent);
+                o.setHasWindow(hasWindow);
+                o.setHasDoor(hasDoor);
                 allOrders.add(o);
             }
         } catch (SQLException | ClassNotFoundException ex)
