@@ -3,6 +3,14 @@
 This project is the second project of the second semester and was made directly after [Cupcake](https://github.com/Castau/CupCake).  
 
 [Project description](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html)
+(Paraphrased)  
+A customer should be able to register, log in, create a LEGO house order and view a list of their orders as well as order specifics. A bill of materials will be generated on-request and should not be saved to the database.
+
+A lego house uses bricks with a standard width of 2 'dots' and a length of either 4, 2 or 1.
+
+An employee must be able to log in and view a list of all orders and modify their status from *'not sent'* to *'sent'*.
+
+Tools: Java servlets, JSP, MySQL. Not required, but used: CSS, bootstrap
 
 ### Discussion
 The purpose of the project is to ensure that we (students) had all learned the same required knowledge from the Cupcake project. Seeing as the project was developed in teams of 3-5 students, some might have missed out on essential knowledge.  
