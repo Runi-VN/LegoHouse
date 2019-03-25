@@ -108,11 +108,11 @@ Kravene til systemets kvalitet, som nævnt ovenfor, skal opfyldes.☑
 Du skal fange exceptions i servletten.  ☑  
 #### Gul  
 Det forventes, at du har kundekrav 4 med. ☑   
-Det forventes også, at du bygger i “forbandt” - at klodserne i lagene er forskudt i forhold til hinanden.  
+Det forventes også, at du bygger i “forbandt” - at klodserne i lagene er forskudt i forhold til hinanden. ❌ 
 Kravene til systemets kvalitet, som nævnt ovenfor, skal opfyldes.  ☑  
 Du skal lave en specialiseret exception, som du kaster fra datalaget og fanger i en servlet.  ☑  
 #### Rød  
 Det forventes, at du også har kundekrav 3 med i din løsning.  ☑  
-Det forventes også, at du på den ene langside gør plads til et vindue (vælg selv en fast størrelse), og på den anden langside gør plads til en dør (vælg selv en fast størrelse.)  
+Det forventes også, at du på den ene langside gør plads til et vindue (vælg selv en fast størrelse), og på den anden langside gør plads til en dør (vælg selv en fast størrelse.)❌  
 Kravene til systemets kvalitet, som nævnt ovenfor, skal opfyldes. ☑   
 Det forventes, at du bruger en front-controller som vist i det vedlagte oplæg. ☑   
