@@ -1,7 +1,7 @@
-package PresentationLayer.Commands;
+package Presentation.Commands;
 
-import FunctionLayer.UserException;
-import PresentationLayer.Command;
+import Logic.Exceptions.UserException;
+import Presentation.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

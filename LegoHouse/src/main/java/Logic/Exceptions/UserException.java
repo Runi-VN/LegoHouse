@@ -1,4 +1,4 @@
-package FunctionLayer;
+package Logic.Exceptions;
 
 /**
  * The purpose of UserException is to...

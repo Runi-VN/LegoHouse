@@ -1,9 +1,9 @@
-package PresentationLayer.Commands;
+package Presentation.Commands;
 
-import FunctionLayer.OrderException;
-import FunctionLayer.OrderFacade;
-import FunctionLayer.UserException;
-import PresentationLayer.Command;
+import Logic.Exceptions.OrderException;
+import Logic.OrderFacade;
+import Logic.Exceptions.UserException;
+import Presentation.Command;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;

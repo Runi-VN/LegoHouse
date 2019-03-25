@@ -20,12 +20,13 @@
 
         <title>LegoHouse</title>
     </head>
+
+    <div class="HeaderStyle">
+        <h1><a href="." >
+                <img src="images/legofavicon.png" width="35" height="35" alt=""/>
+                LegoHouse
+                <img src="images/legofavicon.png" width="35" height="35" alt=""/>
+            </a></h1>
+    </div>
     <body>
-        <div class="HeaderStyle">
-            <h1><a href="." >
-                    <img src="images/legofavicon.png" width="35" height="35" alt=""/>
-                    LegoHouse
-                    <img src="images/legofavicon.png" width="35" height="35" alt=""/>
-                </a></h1>
-        </div>
 

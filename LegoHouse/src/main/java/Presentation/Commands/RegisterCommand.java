@@ -1,14 +1,14 @@
-package PresentationLayer.Commands;
+package Presentation.Commands;
 
-import FunctionLayer.UserFacade;
-import FunctionLayer.UserException;
-import FunctionLayer.entities.User;
-import PresentationLayer.Command;
+import Logic.UserFacade;
+import Logic.Exceptions.UserException;
+import Logic.Entities.User;
+import Presentation.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Register extends Command {
+public class RegisterCommand extends Command {
 
     @Override
     public String execute( HttpServletRequest request, HttpServletResponse response ) throws UserException {

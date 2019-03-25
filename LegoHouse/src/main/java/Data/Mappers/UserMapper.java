@@ -1,8 +1,8 @@
-package DataLayer.Mappers;
+package Data.Mappers;
 
-import DataLayer.DBConnector;
-import FunctionLayer.UserException;
-import FunctionLayer.entities.User;
+import Data.DBConnector;
+import Logic.Exceptions.UserException;
+import Logic.Entities.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

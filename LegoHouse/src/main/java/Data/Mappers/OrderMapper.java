@@ -1,8 +1,8 @@
-package DataLayer.Mappers;
+package Data.Mappers;
 
-import DataLayer.DBConnector;
-import FunctionLayer.entities.Order;
-import FunctionLayer.OrderException;
+import Data.DBConnector;
+import Logic.Entities.Order;
+import Logic.Exceptions.OrderException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

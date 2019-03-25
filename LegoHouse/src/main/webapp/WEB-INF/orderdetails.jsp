@@ -4,9 +4,9 @@
     Author     : Runi
 --%>
 
-<%@page import="FunctionLayer.entities.Bricks"%>
-<%@page import="FunctionLayer.entities.Order"%>
-<%@page import="FunctionLayer.entities.User"%>
+<%@page import="Logic.Entities.Bricks"%>
+<%@page import="Logic.Entities.Order"%>
+<%@page import="Logic.Entities.User"%>
 <%
     User sessionUser = (User) request.getSession().getAttribute("user");
     Order o = (Order) request.getAttribute("order");

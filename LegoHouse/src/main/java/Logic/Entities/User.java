@@ -1,4 +1,4 @@
-package FunctionLayer.entities;
+package Logic.Entities;
 
 import java.util.ArrayList;
 import java.util.List;

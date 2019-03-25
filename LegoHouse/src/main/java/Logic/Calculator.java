@@ -1,7 +1,7 @@
-package FunctionLayer;
+package Logic;
 
-import FunctionLayer.entities.Bricks;
-import FunctionLayer.entities.Order;
+import Logic.Entities.Bricks;
+import Logic.Entities.Order;
 
 /**
  *

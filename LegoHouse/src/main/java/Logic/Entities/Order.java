@@ -1,4 +1,4 @@
-package FunctionLayer.entities;
+package Logic.Entities;
 
 /**
  *

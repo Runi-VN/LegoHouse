@@ -4,10 +4,10 @@
     Author     : kasper
 --%>
 
-<%@page import="FunctionLayer.entities.User"%>
+<%@page import="Logic.Entities.User"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="FunctionLayer.entities.Order"%>
-<%@page import="FunctionLayer.OrderFacade"%>
+<%@page import="Logic.Entities.Order"%>
+<%@page import="Logic.OrderFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%

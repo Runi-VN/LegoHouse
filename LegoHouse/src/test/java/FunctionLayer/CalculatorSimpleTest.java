@@ -1,7 +1,9 @@
 package FunctionLayer;
 
-import FunctionLayer.entities.Bricks;
-import FunctionLayer.entities.Order;
+import Logic.CalculatorSimple;
+import Logic.Calculator;
+import Logic.Entities.Bricks;
+import Logic.Entities.Order;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -3,9 +3,9 @@
     Created on : Aug 22, 2017, 2:33:37 PM
     Author     : kasper
 --%>
-<%@page import="FunctionLayer.OrderFacade"%>
-<%@page import="FunctionLayer.entities.User"%>
-<%@page import="FunctionLayer.entities.Order"%>
+<%@page import="Logic.OrderFacade"%>
+<%@page import="Logic.Entities.User"%>
+<%@page import="Logic.Entities.Order"%>
 <%@page import="java.util.ArrayList"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%
@@ -27,13 +27,13 @@
         <label>Make a new order:</label><br>
         <input type="hidden" name="command" value="createorder">
         <label for="height">Height (blocks)</label>
-        <input name="height" type="number" style="width: 75px" min="5" max="50"  required placeholder="Height"><br> <!-- onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"-->
+        <input name="height" type="number" style="width: 75px" min="5" max="50" title="Minimum 5" required placeholder="Height"><br> <!-- onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"-->
 
         <label for="length">Length (dots)</label>
-        <input name="length" type="number" style="width: 75px"min="8" max="100" required placeholder="Length"><br> <!-- ^^^IMPORTANT: ABOVE CODE REQUIRES FIELD TYPE="TEXT"!^^^-->
+        <input name="length" type="number" style="width: 75px"min="8" max="100" title="Minimum 8" required placeholder="Length"><br> <!-- ^^^IMPORTANT: ABOVE CODE REQUIRES FIELD TYPE="TEXT"!^^^-->
 
         <label for="width">Width (dots)</label>
-        <input name="width" type="number"  style="width: 75px"min="8" max="100" required placeholder="Width"><br>
+        <input name="width" type="number"  style="width: 75px"min="8" max="100" title="Minimum 8" required placeholder="Width"><br>
 
         <label for="door">Door</label>
         <input type="checkbox" name="door" value="door"><br>
@@ -52,11 +52,11 @@
     <label for="table" style="display: inline;">Previous orders</label>
     <table id="allOrderstable" class="table-hover table-condensed">
         <thead>
-        <tr>
-            <th>OrderID</th>
-            <th>Order status</th>
-            <th>Order Details</th>
-        </tr>
+            <tr>
+                <th>OrderID</th>
+                <th>Order status</th>
+                <th>Order Details</th>
+            </tr>
         </thead>
         <%for (int i = 0; i < allUserOrders.size(); i++)
             {

@@ -1,7 +1,8 @@
-package FunctionLayer;
+package Logic;
 
-import DataLayer.Mappers.UserMapper;
-import FunctionLayer.entities.User;
+import Logic.Exceptions.UserException;
+import Data.Mappers.UserMapper;
+import Logic.Entities.User;
 
 /**
  *

@@ -1,9 +1,9 @@
 
-import FunctionLayer.entities.Order;
-import FunctionLayer.entities.User;
-import FunctionLayer.UserException;
-import FunctionLayer.UserFacade;
-import FunctionLayer.entities.Bricks;
+import Logic.Entities.Order;
+import Logic.Entities.User;
+import Logic.Exceptions.UserException;
+import Logic.UserFacade;
+import Logic.Entities.Bricks;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

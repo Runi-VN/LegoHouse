@@ -1,6 +1,6 @@
-package PresentationLayer;
+package Presentation;
 
-import FunctionLayer.UserException;
+import Logic.Exceptions.UserException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,15 +37,24 @@ public class FrontController extends HttpServlet
             validateSession(request);
             Command action = Command.from(request);
             String view = action.execute(request, response);
-            request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
-        } catch (UserException ex)
+            //System.out.println("This is your view: " + view);
+            if (view.equals("index"))
+            {
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+            else
+            {
+                request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
+            }
+        }
+        catch (UserException ex)
         {
             System.out.println(ex.getMessage());
             request.setAttribute("error", "error FrontController (#1337): " + ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
-    
+
     private void validateSession(HttpServletRequest req) throws UserException
     {
         HttpSession session = req.getSession();
@@ -55,7 +64,7 @@ public class FrontController extends HttpServlet
             {
                 throw new UserException("Your session or user is invalid - try again.");
             }
-            
+
         }
     }
 
