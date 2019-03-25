@@ -8,6 +8,7 @@ import FunctionLayer.UserException;
 import PresentationLayer.Commands.CreateOrderCommand;
 import PresentationLayer.Commands.CustomerCommand;
 import PresentationLayer.Commands.EmployeeCommand;
+import PresentationLayer.Commands.ShipOrderCommand;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +27,7 @@ public abstract class Command
         commands.put("customer", new CustomerCommand());
         commands.put("employee", new EmployeeCommand());
         commands.put("createorder", new CreateOrderCommand());
+        commands.put("shiporder", new ShipOrderCommand());
     }
 
     static Command from(HttpServletRequest request)

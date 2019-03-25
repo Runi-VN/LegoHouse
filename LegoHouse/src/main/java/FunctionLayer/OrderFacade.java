@@ -85,5 +85,10 @@ public class OrderFacade
     {
         return OrderMapper.getInstance().getAllOrdersByUserID(userID);
     }
+    
+    public ArrayList<Order> getAllOrders() throws OrderException
+    {
+        return OrderMapper.getInstance().getAllOrders();
+    }
 
 }

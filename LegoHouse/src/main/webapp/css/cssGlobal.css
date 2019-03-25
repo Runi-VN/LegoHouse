@@ -123,7 +123,7 @@
 
 #parent
 {
-    
+
 }
 
 #parent #submitButton
@@ -139,7 +139,7 @@
     vertical-align: middle;
 }
 
-label {
+#allForms label {
     display: inline-block;
     width: 140px;
     text-align: right;
@@ -260,6 +260,16 @@ h1, h2, h3, h4, h5, p, a, label
 .padding
 {
     padding: 30px 30px 30px 30px;
+}
+table, td, th
+{
+    border: 1px solid black;
+    /*border: 1px solid black;   */
+}
+
+thead
+{
+    background-color: #4CAF50;
 }
 
 .antimargin

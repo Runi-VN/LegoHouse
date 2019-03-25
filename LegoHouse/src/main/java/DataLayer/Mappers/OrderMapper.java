@@ -74,7 +74,7 @@ public class OrderMapper
             String SQL = "UPDATE `legohouse`.`orders` "
                     + "SET "
                     + "`status_sent` = ? "
-                    + "WHERE <{?}>;";
+                    + "WHERE order_id = ?;";
             PreparedStatement stmt = con.prepareStatement(SQL);
             stmt.setBoolean(1, newStatus);
             stmt.setInt(2, orderID);

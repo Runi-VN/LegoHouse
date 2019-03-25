@@ -41,7 +41,7 @@ public class FrontController extends HttpServlet
         } catch (UserException ex)
         {
             System.out.println(ex.getMessage());
-            request.setAttribute("error", "error (#1337): " + ex.getMessage());
+            request.setAttribute("error", "error FrontController (#1337): " + ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }

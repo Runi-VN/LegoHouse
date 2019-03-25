@@ -39,7 +39,7 @@
 
         <label for="table" style="display: inline">Details for order #<%=o.getOrderID()%></label>
         <table id="orderDetailsTable" class="table-condensed table-striped col-md-offset-5">
-            <thead style="background-color: #4CAF50">
+            <thead>
             <th>Order ID</th>
             <th>Length</th>
             <th>Width</th>
@@ -58,6 +58,7 @@
     </div>
 
     <table id="BrickDetailsTable" class="table-condensed table-striped col-md-offset-5 padding">
+        <label for="BrickDeailsTable">Bill of Materials</label>
         <thead style="background-color: #4CAF50">
         <th>4x4 brick</th>
         <th>2x2 brick</th>
@@ -75,7 +76,7 @@
             <td style="text-decoration: underline"><%=bricks.getTotal()%></td>
         </tr>
     </table>
-        <br>
+    <br>
 
 
     <p><a href="FrontController?command=<%=sessionUser.getRole()%>">Return to your page</a></p>
