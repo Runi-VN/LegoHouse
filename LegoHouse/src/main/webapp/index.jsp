@@ -6,7 +6,7 @@
 
 <jsp:include page='WEB-INF/Header.jsp'></jsp:include>
     <h2>Welcome to LegoHouse</h2>
-    <div id="Parent" class="col-md-offset-4" style="margin-top: 15%;">
+    <div id="Parent" class="col-md-offset-4" style="margin-top: 5%;">
         <form id="allForms" name="login" action="FrontController" method="POST" class="">
             <label for="login">Login</label><br>
             <input type="hidden" name="command" value="login">

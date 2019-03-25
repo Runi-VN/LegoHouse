@@ -52,6 +52,9 @@ INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `stat
 INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '10', '10', '2', true, '7', true, default);
 INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '20', '20', '1', default, '7', default, true);
 INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '20', '20', '2', true, '7', true, true);
-
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '10', '10', '1', default, '7', default, default);
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '10', '10', '2', true, '7', true, default);
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '20', '20', '1', default, '7', default, true);
+INSERT INTO `legohouse`.`orders` (`order_id`, `length`, `width`, `height`, `status_sent`, `user_id`, `hasWindow`, `hasDoor`) VALUES (default, '20', '20', '2', true, '7', true, true);
 UNLOCK TABLES;
 

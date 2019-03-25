@@ -50,7 +50,14 @@ public class FrontController extends HttpServlet
         catch (UserException ex)
         {
             System.out.println(ex.getMessage());
-            request.setAttribute("error", "error FrontController (#1337): " + ex.getMessage());
+            if (ex.toString().contains("for key 'email_UNIQUE'"))
+            {
+                request.setAttribute("error", "(E-mail): E-mail already exists");
+            }
+            else
+            {
+                request.setAttribute("error", "Error: FrontController Error(#1337):\n " + ex.getMessage());
+            }
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
