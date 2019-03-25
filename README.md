@@ -108,7 +108,7 @@ Kravene til systemets kvalitet, som nævnt ovenfor, skal opfyldes.☑
 Du skal fange exceptions i servletten.  ☑  
 #### Gul  
 Det forventes, at du har kundekrav 4 med. ☑   
-Det forventes også, at du bygger i “forbandt” - at klodserne i lagene er forskudt i forhold til hinanden. ❌ 
+Det forventes også, at du bygger i “forbandt” - at klodserne i lagene er forskudt i forhold til hinanden. ❌  
 Kravene til systemets kvalitet, som nævnt ovenfor, skal opfyldes.  ☑  
 Du skal lave en specialiseret exception, som du kaster fra datalaget og fanger i en servlet.  ☑  
 #### Rød  
