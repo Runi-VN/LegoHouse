@@ -6,7 +6,7 @@
 
 <jsp:include page='WEB-INF/Header.jsp'></jsp:include>
     <h2>Welcome to LegoHouse</h2>
-    <div id="Parent" class="col-md-offset-4" style="margin-top: 5%;">
+    <div id="Parent" class="col-md-offset-4" style="margin-top: 1%;">
         <form id="allForms" name="login" action="FrontController" method="POST" class="">
             <label for="login">Login</label><br>
             <input type="hidden" name="command" value="login">
@@ -15,10 +15,11 @@
             <br> <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" required>
             <br>
-            <input id="submitButton" type="submit" value="Submit" style="margin-left: 50%">
+            <input class="button" id="loginSubmit" type="submit" value="Log in" style="margin-left: 50%">
         </form>
 
         <form id="allForms" name="register" action="FrontController" method="POST" class="">
+            <br> <!-- Taking 3rd input field into account -->
             <label for="login"> Register</label><br>
             <input type="hidden" name="command" value="register">
             <label for="email">E-mail</label>
@@ -30,7 +31,7 @@
             <label for="password2">Retype password</label>
             <input type="password" name="password2" placeholder="Same password"required >
             <br>
-            <input id="submitButton" type="submit" value="Submit" style="margin-left: 40%">
+            <input class="button" id="registerSubmit" type="submit" value="Register" style="margin-left: 40%">
         </form>
     </div>
 

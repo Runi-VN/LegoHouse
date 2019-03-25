@@ -35,13 +35,13 @@
         <label for="width">Width (dots)</label>
         <input name="width" type="number"  style="width: 75px"min="8" max="100" title="Minimum 8" required placeholder="Width"><br>
 
-        <label for="door">Door</label>
+        <label for="door" style="display: inline-block">Door</label>
         <input type="checkbox" name="door" value="door"><br>
 
         <label for="window">Window</label>
-        <input type="checkbox" name="window" value="window"><br>
+        <input type="checkbox" name="window" value="window" ><br>
 
-        <input type="submit" value="Finalize Order"></button>
+        <input type="submit" value="Finalize Order" style="margin-left: 50%" ><br>
     </form>
 </div>
 
@@ -49,8 +49,9 @@
     {%>
 <div id="tablediv" class="padding col-md-offset-5">
 
-    <label for="table" style="display: inline;">Previous orders</label>
+    
     <table id="allOrderstable" class="table-hover table-condensed">
+        <label for="allOrdersTable" style="display: table-row-group">Previous orders</label><br>
         <thead>
             <tr>
                 <th>OrderID</th>

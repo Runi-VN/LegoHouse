@@ -8,103 +8,6 @@
     color: inherit;
 }
 
-
-/*-------NavigationBar css-------*/
-
-#NavBar
-{
-    background: #333;
-    width: 100%;
-    display: inline-block;
-    color: white;
-}
-#leftBar
-{
-    float: left;
-}
-
-#centerBar
-{
-
-}
-
-#rightBar
-{
-    float: right;
-}
-
-#NavBar a /*Links*/
-{
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 8px 8px;
-    text-decoration: none;
-    border-right: 2px solid #bbb;
-}
-#NavBar a:hover
-{
-    background-color: #111;
-}
-
-#NavBar a:active {
-    background-color: #4CAF50;
-}
-
-#NavBar #home
-{
-    float: left;
-    text-align: left;
-}
-
-#NavBar #shop
-{
-    float: right;
-}
-
-#NavBar #cart
-{
-    float: left;
-}
-
-#NavBar #adminpanel
-{
-    color: red;
-    float: left;
-}
-
-#NavBar #user
-{
-    float: left;
-}
-
-#NavBar #logout
-{
-    float: right;
-}
-
-#logoutbutton
-{
-    margin-top: 4px;
-    margin-right: 4px;
-    margin-left: 4px;
-    background-color: red;
-}
-
-#error
-{
-    display: inline-block;
-}
-
-.errorMessage
-{
-    text-align: center;
-    background-color: maroon; 
-    background-size: cover;
-    color: white;
-    padding: 4px 4px 4px 4px;
-}
-
 /*-------Footer css-------*/
 
 
@@ -119,85 +22,23 @@
     text-align: center;
 }
 
+#logoutbutton
+{
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-left: 4px;
+    background-color: red;
+}
+
+
 /*-------Index.jsp css-------*/
 
-#parent
+loginSubmit
 {
-
+    background-color: #0099ff;
 }
 
-#parent #submitButton
-{
-    align-self: auto;
-}
-
-#allForms
-{
-    margin-top: 15px;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-
-#allForms label {
-    display: inline-block;
-    width: 140px;
-    text-align: right;
-}​
-
-.ImagesMargin{
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-.IndexImages
-{
-    width: 100%;
-}
-
-
-@media screen and (min-width: 768px)
-{
-    .IndexImages
-    {
-        width: 768px;
-        margin: 0 auto;
-    }
-}
-
-#IndexText
-{
-    text-align: center;
-    width: 225px;
-    display: block;
-}
-
-#index
-{
-    overflow-x: hidden;
-}
-
-/*-------Login.jsp css-------*/
-#login
-{
-    border: solid 1px black;
-    text-align: center;
-    padding-bottom: 25px;
-}
-#register
-{
-    border: solid 1px black;
-    text-align: center;
-    padding-bottom: 25px;
-}
-
-#LoginSubmit
-{
-    text-align: left;
-    background-color: #4CAF50;
-}
-
-#registerButton
+#registerSubmit
 {
     background-color: #0099ff;
 }
@@ -215,13 +56,25 @@ html, body
     padding-bottom: 1rem;
 }
 
+#allForms
+{
+    margin-top: 15px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
 
-button
+#allForms label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}​
+
+.button
 {
     /*border: none;*/
-    font-family: inherit;
-    font-size: small;
     text-align: center;
+    font-size: small;
     display: inline-block;
     font-size: 16px;
 }
@@ -231,10 +84,6 @@ button
     background-color: #111;
 }
 
-/*.button:active
-{
-    background-color: purple;
-}*/
 h1, h2
 {
     padding: 3px 3px;
@@ -248,7 +97,7 @@ h2
     outline-style: solid;
     outline-color: #333;
     outline-width: 5px;
-    outline-offset: -3px;
+    outline-offset: 2px;
 
 }
 
@@ -267,21 +116,16 @@ table, td, th
     /*border: 1px solid black;   */
 }
 
+
 thead
 {
     background-color: #4CAF50;
 }
 
-.antimargin
-{
-    margin-left: 15px;
-    margin-right: 15px;
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: burlywood;
 }
 
-.inline-block
-{
-    display: inline-block;
-}
 
 .center
 {
