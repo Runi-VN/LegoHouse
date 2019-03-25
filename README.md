@@ -100,7 +100,7 @@ This program takes use of the following [design patterns](https://en.wikipedia.o
 *minor* [Interfaces](https://en.wikipedia.org/wiki/Interface_(Java))
 
 ### UML Navigational Diagram
-
+To be made
 
 ### Project demands (danish)
 
