@@ -69,6 +69,7 @@ public class FrontController extends HttpServlet
         {
             if (session == null || session.getAttribute("user") == null)
             {
+                session.invalidate(); //to clear any extra attributes such as /userloggedin/.
                 throw new UserException("Your session or user is invalid - try again.");
             }
 
