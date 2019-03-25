@@ -2,10 +2,12 @@
 scale max 800 width
 
 title "LegoHouse - Navigation Diagram"
+/'Creating elements'/
 [*] -> Index
 Index : Index.jsp
 Login  : Index.jsp 
 Register : Index.jsp
+/'Routing'/
 Index --> Login
 Index --> Register
 Login --> LoggedIn : Succeeded Login/Register, start Session
@@ -13,6 +15,7 @@ Register --> LoggedIn
 Login --> Login: Failed Login/Register, error message
 Register --> Register
 
+/'Creating elements'/
 state LoggedIn {
     state Employee {
         Employee : Employee.jsp
@@ -24,18 +27,23 @@ state LoggedIn {
   OrderDetails : Details, "Bill of Materials"
   PreviousOrdersTable : OrderID | status | detailslink
   CreateOrderForm : Height | Length | Width | Door | Window | Submit
+  
+  /'Routing'/
+  [*] -down-> Customer : Customer
+  [*] -right-> Employee : Employee
   LogOut : Button 
-  LogOut -up-> Index : End Session
+  LogOut -left-> Index : End Session
   Customer -up-> LogOut
   Employee -up-> LogOut
   
-  Employee --> AllSystemOrdersTable
-  AllSystemOrdersTable --> OrderDetails : "Click link"
+  Employee --> AllSystemOrdersTable : Ship Order
+  AllSystemOrdersTable --> Employee
+  AllSystemOrdersTable --> OrderDetails : Click link
  
-  Customer --> CreateOrderForm
+  Customer --> CreateOrderForm : Create Order
   CreateOrderForm -up-> Customer
   Customer --> PreviousOrdersTable
-  PreviousOrdersTable --> OrderDetails : "Click link"
+  PreviousOrdersTable --> OrderDetails : Click link
   
     
     
