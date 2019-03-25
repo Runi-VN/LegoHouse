@@ -1,61 +1,16 @@
-Algoritme: (Brug excel)
-
-Længde, bredde
-n/10 = left digit
-n%10 = right digit
-
-højde = count*height
-
-forbandt = -2
-
 https://github.com/Castau/LegoCarportProject/blob/master/LegoCarport/src/main/java/logic/Logic_Impl.java
 
 
-Virker !user og !admin i OrderDetails? Sammenlign med CMD_CustomerInvoiceDetails
-
-
-1 custom exception class instead of multiple (UserException, OrderException)
-Orders arraylist on user? hvordan binder vi invoices til user? se CMD_checkout
+Virker !user og !admin i OrderDetails? 
 
 Efter første algoritme: Tilføj vinduer og døre til ordre + db
-
-Errorhandling af brugere ved bestilling: smid en error kode og saml den op, lav en if-case baseret på koden og smid en relateret besked. Custom messages, woo!
-
-
 Javadoc
 Flere tests
-UML
-Beskriv brug af patterns (singleton, frontcontroller, command, facade, interface)
-fix css
 
-Kunde:
-Ordre - længde, bredde, højde. [x]
-Kunde skal kunne se tidligere ordre
-Er ordre afsendt eller ej? [x]
-Ordre detaljer skal vise stykliste
-
-
-
-
-Exception Handle bricks størrelser, kun hele ints
-fix frontcontroller til at håndtere alt med /* [?]
-javadoc
 
 https://github.com/SimonBojesen/LEGOHOUSE
 
-
-
-
 https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets
-
 
 https://github.com/mathiasbk1/LegoHus/blob/master/src/main/java/FunctionLayer/BrickCalculator.java
 
-
-FINAL DOINGS:
-TJEK
-https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets
-
-
-FLAWS:
-RequestDispatch virker ikke ved OrderDetails eftersom at den requester af to omgange og attribute-objekter går tabt.
