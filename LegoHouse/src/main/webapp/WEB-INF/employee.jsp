@@ -51,7 +51,7 @@
                     <form name="shiporder" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="shiporder">
                         <input type="hidden" name="orderid" value="<%= allOrders.get(i).getOrderID()%>">
-                        <input type="button" value="Ship order"> 
+                        <input type="submit" value="Ship order"> 
                     </form>
 
                     <% } %>
