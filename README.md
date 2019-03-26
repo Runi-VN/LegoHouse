@@ -116,7 +116,7 @@ This program takes use of the following [design patterns](https://en.wikipedia.o
 
 #### Kvalitetskrav til afleveret system  
 - Det færdige system skal ligge som netbeans projekt på github. ☑   
-- Det færdige system skal være struktureret efter 3-lags modellen - præsentationslag, forretningslag og datalag.☑    --
+- Det færdige system skal være struktureret efter 3-lags modellen - præsentationslag, forretningslag og datalag.☑    
 - Det forventes, at der er en facade mellem præsentations og forretningslag og evt. mellem forretningslaget og datamappers.☑   
 - Det forventes, at der IKKE kaldes forretningslogik (eller datamappers) fra JSP siderne.☑    
 - Det forventes, at session og requests attributter anvendes korrekt. ☑   
