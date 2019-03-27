@@ -10,14 +10,14 @@ Discussion: Please see the [wiki](https://github.com/Runi-VN/LegoHouse/wiki).
 ```markdown
 A customer must be able to:
 register, log in, create a LEGO house order.
-View a list of their orders as well as order specifics. 
+View a list of their orders as well as order specifics ('bill of materials'). 
 
 An employee must be able to:
 log in, view a list of all orders.
 modify their status from 'processing' to 'shipped'.
 
 Furthermore:
-A bill of materials will be generated on request and should not be saved to the database.
+The bill of materials will be generated on request and should not be saved to the database.
 
 A lego house uses bricks with a standard width of 2 'dots' and a length of either 4, 2 or 1.
 ```
