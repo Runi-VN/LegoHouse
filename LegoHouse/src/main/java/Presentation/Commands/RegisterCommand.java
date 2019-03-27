@@ -2,14 +2,27 @@ package Presentation.Commands;
 
 import Logic.UserFacade;
 import Logic.Exceptions.UserException;
-import Logic.Entities.User;
+import Data.Entities.User;
 import Presentation.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * Handles user registration
+ * 
+ * @author Runi
+ */
 public class RegisterCommand extends Command {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     @Override
     public String execute( HttpServletRequest request, HttpServletResponse response ) throws UserException {
         UserFacade uf = new UserFacade();

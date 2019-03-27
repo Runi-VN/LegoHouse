@@ -1,7 +1,7 @@
 package Logic;
 
-import Logic.Entities.Bricks;
-import Logic.Entities.Order;
+import Data.Entities.Bricks;
+import Data.Entities.Order;
 
 /**
  *
@@ -9,11 +9,18 @@ import Logic.Entities.Order;
  *
  * For documentation see github ReadMe: https://github.com/Runi-VN/LegoHouse/
  *
+ * @see Calculator
+ *
  * @author runin
  */
 public class CalculatorSimple implements Calculator
 {
 
+    /**
+     *
+     * @param order
+     * @return
+     */
     @Override
     public Bricks calculateBricks(Order order)
     {
@@ -42,7 +49,6 @@ public class CalculatorSimple implements Calculator
                     width = (0, 1, 1) * 2 = (0, 2, 2)  (fours, twos, ones)
 
         Total:  (length+width) (10,2,4) `(fours, twos, ones)`*/
-        
         Bricks lengthBricks = calculateRowBricks(length);
         //System.out.println(lengthBricks.getTotal() + "\n--");
         Bricks widthBricks = calculateRowBricks(width);

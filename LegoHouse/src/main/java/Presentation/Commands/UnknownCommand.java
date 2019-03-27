@@ -6,13 +6,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * The purpose of UnknownCommand is to...
+ * Handles commands not known to FrontController.
+ * 
+ * e.g. FrontController?command=wtf
  *
  * @author kasper
  */
 public class UnknownCommand extends Command
 {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {

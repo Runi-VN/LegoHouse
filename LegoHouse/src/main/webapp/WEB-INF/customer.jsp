@@ -2,21 +2,18 @@
     Document   : customerpage
     Created on : Aug 22, 2017, 2:33:37 PM
     Author     : kasper
+
+    Customer:
+    Handles customer as an user object and displays all their orders. Also handles new orders.
 --%>
 <%@page import="Logic.OrderFacade"%>
-<%@page import="Logic.Entities.User"%>
-<%@page import="Logic.Entities.Order"%>
+<%@page import="Data.Entities.User"%>
+<%@page import="Data.Entities.Order"%>
 <%@page import="java.util.ArrayList"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%
     User user = (User) session.getAttribute("user");
-    ArrayList<Order> allUserOrders = OrderFacade.getInstance().getAllUserOrders(user.getId());
-
-    /*if (user == null) //should be handled in frontcontroller
-    {
-        request.setAttribute("error", "you messed up");
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-    }*/
+    ArrayList<Order> allUserOrders = (ArrayList<Order>) request.getAttribute("allUserOrders");
 %>
 <h2>Customer Page</h2>
 <h3>Hello ${user.email}</h3>
@@ -49,7 +46,7 @@
     {%>
 <div id="tablediv" class="padding col-md-offset-5">
 
-    
+
     <table id="allOrderstable" class="table-hover table-condensed">
         <label for="allOrdersTable" style="display: table-row-group">Previous orders</label><br>
         <thead>
@@ -77,12 +74,5 @@
     </table>
 </div>
 <%}%>
-<!--</form>
-<form id="allForms" name="myOrders" action="FrontController" method="POST">
-    <label>Previous orders</label><br>
-    <input type="hidden" value="<%=user.getId()%>">
-    <input type="submit" value="See old orders">
-</form>-->
-
 
 <jsp:include page='Footer.jsp'></jsp:include>

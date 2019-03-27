@@ -2,11 +2,13 @@
     Document   : orderdetails
     Created on : Mar 22, 2019, 9:41:08 AM
     Author     : Runi
+
+    Detailed table display of orders. Accessible by both employee & customer.
 --%>
 
-<%@page import="Logic.Entities.Bricks"%>
-<%@page import="Logic.Entities.Order"%>
-<%@page import="Logic.Entities.User"%>
+<%@page import="Data.Entities.Bricks"%>
+<%@page import="Data.Entities.Order"%>
+<%@page import="Data.Entities.User"%>
 <%
     User sessionUser = (User) request.getSession().getAttribute("user");
     Order o = (Order) request.getAttribute("order");
@@ -79,7 +81,7 @@
     <br>
 
 
-    <p><a href="FrontController?command=<%=sessionUser.getRole()%>">Return to your page</a></p>
+    <p><a href="FrontController?command=return">Return to your page</a></p>
 </div>
 
 <jsp:include page='Footer.jsp'></jsp:include>

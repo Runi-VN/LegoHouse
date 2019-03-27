@@ -1,0 +1,7 @@
+Data
+Data.Entities
+Data.Mappers
+Logic
+Logic.Exceptions
+Presentation
+Presentation.Commands

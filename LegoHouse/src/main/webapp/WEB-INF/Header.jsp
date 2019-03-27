@@ -2,6 +2,8 @@
     Document   : Header
     Created on : Mar 19, 2019, 8:25:34 PM
     Author     : Runi
+    Header: Handles imports, website title and <h1> title for all pages.
+    
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -2,12 +2,13 @@ package Logic;
 
 import Logic.Exceptions.OrderException;
 import Data.Mappers.OrderMapper;
-import Data.Mappers.UserMapper;
-import Logic.Entities.Order;
+import Data.Entities.Order;
 import java.util.ArrayList;
 
 /**
  *
+ * Singleton logic facade for handling orders from database to presentation.
+ * 
  * @author Runi
  */
 public class OrderFacade
@@ -15,6 +16,10 @@ public class OrderFacade
 
     private static OrderFacade instance = null;
 
+    /**
+     *
+     * @return
+     */
     public synchronized static OrderFacade getInstance()
     {
         if (instance == null)
@@ -39,13 +44,21 @@ public class OrderFacade
      * @return
      * @throws OrderException custom exception to handle later
      */
-    public Order createOrderByFields(int length, int width, int height, int userID) throws OrderException
+    public Order createOrder(int length, int width, int height, int userID) throws OrderException
     {
         Order order = new Order(length, width, height, userID); //Desired info
         OrderMapper.getInstance().createOrder(order); //Create order in database
         return order; //If no exception, return desired order with correct ID and status.
     }
 
+    /**
+     *
+     * Creates an Order in the database - based on a Order object.
+     * 
+     * @param order
+     * @return
+     * @throws OrderException
+     */
     public Order createOrder(Order order) throws OrderException
     {
         return OrderMapper.getInstance().createOrder(order);
@@ -78,6 +91,8 @@ public class OrderFacade
 
     /**
      *
+     * Gets a single users orders of all time
+     * 
      * @param userID
      * @return
      * @throws OrderException
@@ -87,6 +102,13 @@ public class OrderFacade
         return OrderMapper.getInstance().getAllOrdersByUserID(userID);
     }
     
+    /**
+     *
+     * Returns all orders in the database at the current time.
+     * 
+     * @return
+     * @throws OrderException
+     */
     public ArrayList<Order> getAllOrders() throws OrderException
     {
         return OrderMapper.getInstance().getAllOrders();

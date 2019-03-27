@@ -2,17 +2,19 @@
     Document   : employeepage.jsp
     Created on : Aug 24, 2017, 6:31:57 AM
     Author     : kasper
+
+    Employee: Handles employee as a user object, allows to see all user orders and mark them sent.
+    Also gives access to order details page.
 --%>
 
-<%@page import="Logic.Entities.User"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Logic.Entities.Order"%>
+<%@page import="Data.Entities.User"%>
+<%@page import="Data.Entities.Order"%>
 <%@page import="Logic.OrderFacade"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%
-    User user = (User) request.getSession().getAttribute("user");
-    ArrayList<Order> allOrders = OrderFacade.getInstance().getAllOrders();
+    ArrayList<Order> allOrders = (ArrayList<Order>) request.getAttribute("allOrders");
 %>
 <h2>Employee page</h2>
 <h3>Hello ${user.email}</h3>
@@ -46,7 +48,7 @@
                 <td> <a href="?command=orderdetails&id=<%= allOrders.get(i).getOrderID()%>"> Order details</a></td>
                 <td>
                     <% if (allOrders.get(i).getStatus_sent() != true)
-                    {%>
+                        {%>
 
                     <form name="shiporder" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="shiporder">

@@ -6,14 +6,19 @@ import Presentation.Commands.UnknownCommand;
 import Presentation.Commands.OrderDetailsCommand;
 import Logic.Exceptions.UserException;
 import Presentation.Commands.CreateOrderCommand;
-import Presentation.Commands.CustomerCommand;
-import Presentation.Commands.EmployeeCommand;
 import Presentation.Commands.LogOutCommand;
+import Presentation.Commands.RedirectCommand;
 import Presentation.Commands.ShipOrderCommand;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * Available commands to use to navigate the site with FrontController
+ * 
+ * @author Runi
+ */
 public abstract class Command
 {
 
@@ -25,11 +30,10 @@ public abstract class Command
         commands.put("login", new LoginCommand());
         commands.put("register", new RegisterCommand());
         commands.put("orderdetails", new OrderDetailsCommand());
-        commands.put("customer", new CustomerCommand());
-        commands.put("employee", new EmployeeCommand());
         commands.put("createorder", new CreateOrderCommand());
         commands.put("shiporder", new ShipOrderCommand());
         commands.put("logout", new LogOutCommand());
+        commands.put("return", new RedirectCommand());
     }
 
     static Command from(HttpServletRequest request)
@@ -42,6 +46,13 @@ public abstract class Command
         return commands.getOrDefault(commandName, new UnknownCommand());
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     public abstract String execute(HttpServletRequest request, HttpServletResponse response)
             throws UserException;
 

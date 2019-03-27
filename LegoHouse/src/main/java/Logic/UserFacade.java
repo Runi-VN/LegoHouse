@@ -2,10 +2,12 @@ package Logic;
 
 import Logic.Exceptions.UserException;
 import Data.Mappers.UserMapper;
-import Logic.Entities.User;
+import Data.Entities.User;
 
 /**
  *
+ * Singleton logic facade for handling database -> logic -> presentation user handling.
+ * 
  * @author runi
  */
 public class UserFacade
@@ -13,6 +15,10 @@ public class UserFacade
 
     private static UserFacade instance = null;
 
+    /**
+     *
+     * @return
+     */
     public synchronized static UserFacade getInstance()
     {
         if (instance == null)

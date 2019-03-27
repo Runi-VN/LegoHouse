@@ -7,11 +7,20 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
+ * Logs user out, clears session.
+ * 
  * @author Runi
  */
 public class LogOutCommand extends Command
 {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {

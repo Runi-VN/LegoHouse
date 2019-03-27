@@ -1,17 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Logic.Exceptions;
 
 /**
+ *
+ * Custom exception related to order creation.
  *
  * @author Runi
  */
 public class OrderException extends Exception
 {
 
+    /**
+     *
+     * @param msg
+     */
     public OrderException(String msg)
     {
         super(msg);

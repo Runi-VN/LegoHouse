@@ -11,19 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
+ * Handles an employee shipping user orders on their employeepage.jsp
+ * 
  * @author runin
  */
 public class ShipOrderCommand extends Command
 {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
         try
         {
-            System.out.println("What is the orderID?");
+            //System.out.println("What is the orderID?");
             int orderID = Integer.parseInt(request.getParameter("orderid"));
-            System.out.println("Current Order ID: " + orderID);
+            //System.out.println("Current Order ID: " + orderID);
             OrderFacade.getInstance().updateOrderStatus(orderID, Boolean.TRUE);
             //OrderFacade of = OrderFacade.getInstance();
             //of.updateOrderStatus(0, Boolean.TRUE)

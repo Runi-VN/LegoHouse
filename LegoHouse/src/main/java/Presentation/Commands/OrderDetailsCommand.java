@@ -2,15 +2,14 @@ package Presentation.Commands;
 
 import Logic.Calculator;
 import Logic.CalculatorSimple;
-import Logic.Entities.Order;
+import Data.Entities.Order;
 import Logic.Exceptions.OrderException;
 import Logic.OrderFacade;
-import Logic.Entities.User;
+import Data.Entities.User;
 import Logic.Exceptions.UserException;
 import Presentation.Command;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,6 +20,21 @@ import javax.servlet.http.HttpServletResponse;
 public class OrderDetailsCommand extends Command
 {
 
+    /**
+     *
+     * Handles orderdetails.jsp.
+     * 
+     * Checks if order belongs to order,
+     * 
+     * checks if user is an admin
+     * 
+     * then displays if one or both is true.
+     * 
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {

@@ -1,14 +1,21 @@
 package Logic.Exceptions;
 
 /**
- * The purpose of UserException is to...
+ * Custom exception used in regards to user login/creation.
+ *
+ *
  * @author kasper
  */
-public class UserException extends Exception {
+public class UserException extends Exception
+{
 
-    public UserException(String msg) {
+    /**
+     *
+     * @param msg
+     */
+    public UserException(String msg)
+    {
         super(msg);
     }
-    
 
 }

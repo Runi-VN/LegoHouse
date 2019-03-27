@@ -10,23 +10,30 @@
 
 /*-------Footer css-------*/
 
-
-#footerLink
+#footer
 {
+    text-align: center;
+    display: inline;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: #333;
+}
+
+#footer #footerLink
+{
+    position: absolute;
     color: white;
     text-align: center;
 }
 
-#logoutbutton
+#footer #logoutbutton
 {
-    margin-top: 4px;
+    float: right;
+/*    margin-top: 4px;
     margin-right: 4px;
-    margin-left: 4px;
+    margin-left: 4px;*/
     background-color: red;
 }
 
@@ -126,6 +133,11 @@ thead
     background-color: burlywood;
 }
 
+.centered {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+}
 
 .center
 {

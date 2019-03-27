@@ -3,10 +3,9 @@ package Presentation.Commands;
 import Logic.Exceptions.OrderException;
 import Logic.OrderFacade;
 import Logic.Exceptions.UserException;
-import Logic.Entities.Order;
-import Logic.Entities.User;
+import Data.Entities.Order;
+import Data.Entities.User;
 import Presentation.Command;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -14,11 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
+ * Creates an order based on req parameters
+ * 
  * @author Runi
  */
 public class CreateOrderCommand extends Command
 {
 
+    /**
+     *
+     * Creates an order based on request parameters, returns to userpage.
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws UserException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {

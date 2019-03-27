@@ -1,0 +1,11 @@
+Inspiration:
+
+https://github.com/Castau/LegoCarportProject/
+
+https://github.com/SimonBojesen/LEGOHOUSE
+
+https://github.com/mathiasbk1/LegoHus/
+
+Resources:
+
+https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets

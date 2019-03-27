@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
+ * Basic catch-all case. Read up on FrontController on Wikipedia if you dont know.
+ * 
  * @author kasper
  */
 @WebServlet(name = "FrontController", urlPatterns =

@@ -2,7 +2,7 @@ package Data.Mappers;
 
 import Data.DBConnector;
 import Logic.Exceptions.UserException;
-import Logic.Entities.User;
+import Data.Entities.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +10,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * The purpose of UserMapper is to...
+ * I did not make this class.
+ * 
+ * This is to retrieve data from the database.
+ * 
+ * Take use of UserFacade for application use!
  *
  * @author kasper
  */
@@ -19,6 +23,12 @@ public class UserMapper
 
     private static UserMapper instance = null;
 
+    /**
+     *
+     * Singleton instance return of UserMapper
+     * 
+     * @return
+     */
     public synchronized static UserMapper getInstance()
     {
         if (instance == null)
@@ -28,6 +38,13 @@ public class UserMapper
         return instance;
     }
 
+    /**
+     *
+     * Creates an user in the database.
+     * 
+     * @param user
+     * @throws UserException
+     */
     public void createUser(User user) throws UserException
     {
         try
@@ -49,6 +66,15 @@ public class UserMapper
         }
     }
 
+    /**
+     *
+     * Checks if user exists, if it does, returns the user. If not, throws exception.
+     * 
+     * @param email
+     * @param password
+     * @return
+     * @throws UserException
+     */
     public User login(String email, String password) throws UserException
     {
         try

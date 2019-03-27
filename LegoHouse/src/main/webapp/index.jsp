@@ -2,6 +2,8 @@
     Document   : index
     Created on : Aug 22, 2017, 2:01:06 PM
     Author     : kasper
+
+    Index handles login and registration
 --%>
 
 <jsp:include page='WEB-INF/Header.jsp'></jsp:include>

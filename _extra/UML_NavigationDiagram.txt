@@ -1,9 +1,9 @@
 @startuml
-scale max 800 width
+scale max 1200 width
 
 title "LegoHouse - Navigation Diagram"
 /'Creating elements'/
-[*] -> Index
+[*] -> Index : User
 Index : Index.jsp
 Login  : Index.jsp 
 Register : Index.jsp
@@ -39,13 +39,13 @@ state LoggedIn {
   Employee --> AllSystemOrdersTable : Ship Order
   AllSystemOrdersTable --> Employee
   AllSystemOrdersTable --> OrderDetails : Click link
+  OrderDetails --> AllSystemOrdersTable
  
   Customer --> CreateOrderForm : Create Order
   CreateOrderForm -up-> Customer
   Customer --> PreviousOrdersTable
   PreviousOrdersTable --> OrderDetails : Click link
-  
-    
-    
+  OrderDetails -up-> PreviousOrdersTable
+      
 }
 @enduml

@@ -1,8 +1,9 @@
 package Data.Mappers;
 
 import Data.DBConnector;
-import Logic.Entities.Order;
+import Data.Entities.Order;
 import Logic.Exceptions.OrderException;
+import Logic.OrderFacade;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,12 @@ import java.util.ArrayList;
 
 /**
  *
+ * OrderMapper - retrieving data from database.
+ * 
+ * For application use, please use logic.OrderFacade
+ * 
+ * @see OrderFacade
+ * 
  * @author Runi
  */
 public class OrderMapper
@@ -19,6 +26,12 @@ public class OrderMapper
 
     private static OrderMapper instance = null;
 
+    /**
+     *
+     * Singleton constructor use of OrderMapper
+     * 
+     * @return
+     */
     public synchronized static OrderMapper getInstance()
     {
         if (instance == null)
@@ -28,6 +41,14 @@ public class OrderMapper
         return instance;
     }
 
+    /**
+     *
+     * Creates an order based on an order object
+     * 
+     * @param order
+     * @return
+     * @throws OrderException
+     */
     public Order createOrder(Order order) throws OrderException
     {
         try
@@ -65,6 +86,15 @@ public class OrderMapper
         return order;
     }
 
+    /**
+     *
+     * Updates the 'sent' boolean status on a specific order - based on order ID
+     * 
+     * @param orderID
+     * @param newStatus
+     * @return
+     * @throws OrderException
+     */
     public boolean updateStatus(int orderID, boolean newStatus) throws OrderException
     {
         int result;
@@ -135,6 +165,7 @@ public class OrderMapper
      *
      * @param orderID
      * @return
+     * @throws Logic.Exceptions.OrderException
      */
     public Order getOrderByID(int orderID) throws OrderException
     {
@@ -169,6 +200,13 @@ public class OrderMapper
         return o;
     }
 
+    /**
+     *
+     * Returns all orders currently in the database.
+     * 
+     * @return
+     * @throws OrderException
+     */
     public ArrayList<Order> getAllOrders() throws OrderException
     {
         ArrayList<Order> allOrders = new ArrayList<>();

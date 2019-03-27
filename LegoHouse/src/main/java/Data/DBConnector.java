@@ -6,29 +6,36 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * The purpose of DBConnector is to...
+ * Database connector. Simple singleton for use with Order- & UserMapper
  *
  * @author runi
  */
 public class DBConnector
 {
 
-//    private static final String URL = "localhost";
-//    private static final String USERNAME = "root";
-//    private static final String PASSWORD = "1234";
     private static final String IP = "localhost";
     private static final String PORT = "3306";
     public static final String DATABASE = "legohouse";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "1234"; //laptop: root //desktop: 1234
+    private static final String USERNAME = "root"; //Change to yours
+    private static final String PASSWORD = "1234"; //Change to yours
 
     private static Connection singleton;
 
+    /**
+     *
+     * @param con
+     */
     public static void setConnection(Connection con)
     {
         singleton = con;
     }
 
+    /**
+     *
+     * @return
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     public static Connection connection() throws ClassNotFoundException, SQLException
     {
         if (singleton == null)
