@@ -2,9 +2,11 @@
 
 This mandatory solo project is the second project of the second semester. The main focus of the project is architecture.
 
+### Results
+
 ~~Project deployed at [to come]().~~  
-JavaDocs [here](https://runi-vn.github.io/LegoHouse).  
-Discussion: Please see the [wiki](https://github.com/Runi-VN/LegoHouse/wiki). 
+JavaDocs can be found [here](https://runi-vn.github.io/LegoHouse).  
+Project discussion on the [wiki](https://github.com/Runi-VN/LegoHouse/wiki), including algorithm breakdown.
 
 [Project description](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html)  
 (Paraphrased)  
