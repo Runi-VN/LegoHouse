@@ -42,49 +42,6 @@ Many of the tests included *could* fail because they take use of a test database
 
 ## Completed requirements:
 
-###  Walkthrough of basic algorithm  
-For this __simple__ walkthrough I only take account of the length of one side ("length") of the building.
-```java  
-public Bricks calculateBricks(Order order)
-    {
-        int length = order.getLength();
-        Bricks bricks = null;
-        
-        /*We always want as many 4's as possible, then 2's, then 1's if necessary. (Hint: Uneven length)
-          Generally speaking: 
-          N/10 = left digit
-          N%10 = right digit
-          When we divide we get the actual count or "potential difference".
-          When we use the modulus operator (%) we get the remainder*/
-        
-        /*IMPORTANT: Integers (in our case ints) do not allow decimals in the same way a double does. 
-        In case of a decimal, we ALWAYS round down. 
-        This will be used to our advantage*/
-        
-        
-        //For our purpose lets test with the length 23
-        int CalcFours = (length / 4);     //(23/4) = 5,75 ~ 5.
-        int CalcRemainder = (length % 4); //(23%4) = 3. 
-        
-        //We do not have a 3-dot brick, so we need to apply the above technique to Twos.
-        
-        int CalcTwos = (CalcRemainder/2); //(3/2) = 1.5 ~ 1.
-        //We still do not have a three-dot brick, but we do have a 1-dot brick to fix our problem.
-        
-        int CalcOnes = (CalcRemainder%2); //(3%2) = 1. 
-        /*REMEMBER! This takes height of equal numbers and will always give 0 in that case 
-        (if a 1-brick is not needed)*/
-        
-        //So the results should now be:
-        //fours = 5 = 20
-        //twos = 1 = 2
-        //ones = 1 = 1
-        //total: 23
-        
-        return bricks = (new Bricks(CalcFours, CalcTwos, CalcOnes));
-        
-    }
-```  
 ### Database E/R Diagram  
 This was based on the login database mentioned in discussion. I would/could have made this differently.
 <img src="https://i.imgur.com/prWZHLR.png" alt="Database E.R. Diagram">
