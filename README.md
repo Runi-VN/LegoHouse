@@ -4,7 +4,7 @@ This mandatory solo project is the second project of the second semester. The ma
 
 ### Results
 
-~~Project deployed at [to come]().~~  
+Project deployed at [to come](http://207.154.233.238/legohouse/). 
 JavaDocs can be found [here](https://runi-vn.github.io/LegoHouse).  
 Project and algorithm discussion can be found on the [wiki](https://github.com/Runi-VN/LegoHouse/wiki).
 
